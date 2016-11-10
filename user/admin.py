@@ -1,3 +1,5 @@
-from django.contrib import admin
+from django.shortcuts import render
+from django.http import HttpResponse
 
-# Register your models here.
+def index(request):
+    return HttpResponse("<h2>HEY!</h2>")
