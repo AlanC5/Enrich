@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'user',
     'organization',
     'search',
+    'login',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
