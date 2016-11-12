@@ -1,5 +1,6 @@
 # Enrich
-<strong>Contributors:</strong><br>
+## Contributors:
+
 - Product Owner: Khadeeja Din
 - SCRUM Master: Alan Chen
 - Dev: Samuel Cohen
