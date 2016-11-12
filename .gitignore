@@ -1,5 +1,4 @@
 venv
-Procfile
 .DS_Store
 *.pyc
 ~
