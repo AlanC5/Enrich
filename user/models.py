@@ -6,4 +6,4 @@ class User(models.Model):
     email = models.CharField()
     password = models.CharField()
     name = models.CharField()
-    schoolName = models.CharField()
+    school_name = models.CharField()
