@@ -10,3 +10,7 @@ class Organization(models.Model):
     rating = models.DecimalField(max_digits = 2, decimal_places = 1)
     category = models.TextField()
     address = models.TextField()
+
+
+    def __str__(self):
+        return self.organization_id + ', ' + self.name + ', ' + self.description + ', ' + self.free + ', ' + self.tuition + ', ' + self.rating + ', ' + self.category + ', ' + self.address
