@@ -7,3 +7,6 @@ class User(models.Model):
     password = models.CharField(max_length = 30)
     name = models.CharField(max_length = 100)
     school_name = models.CharField(max_length = 100)
+
+    def __str__(self):
+        return self.user_id + ', ' + self.email + ', ' + self.name + ', ' + self.school_name
