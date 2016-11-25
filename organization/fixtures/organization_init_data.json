@@ -1,0 +1,28 @@
+[
+    {
+        "model": "organization.Organization",
+        "pk": 1,
+        "fields": {
+            "name": "ACE Mentor Program",
+            "description": "ACE is an after school program that introduces you to careers in architecture and engineering",
+            "free": true,
+            "tuition": "0",
+            "rating": 4,
+            "category": "STEM",
+            "address": "55 main street, New York, NY"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 2,
+        "fields": {
+            "name": "All Star Summer Institute",
+            "description": "A 6-week program to inspire, and equip participants with the knowledge, skills, and resources needed to pursue paths leading to academics and/or careers in the technology and engineering sectors",
+            "free": true,
+            "tuition": "0",
+            "rating": "4.5",
+            "category": "STEM",
+            "address": "23 Mott Street, New York, NY"
+        }
+    }
+]
