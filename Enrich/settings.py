@@ -88,8 +88,8 @@ DATABASES = {
 # Fixtures/Seeding Database
 # https://code.djangoproject.com/wiki/Fixtures
 FIXTURE_DIRS = (
-   'organization/fixtures/init_data.json',
-   'user/fixtures/init_data.json',
+   'organization/fixtures/organization_init_data.json',
+   'user/fixtures/user_init_data.json',
 )
 
 # Password validation

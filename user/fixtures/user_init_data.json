@@ -61,7 +61,7 @@
     },
     {
         "model": "user.user",
-        "pk": "John",
+        "pk": "7",
         "fields": {
             "email": "john123@gmail.com",
             "password": "somethingObvious",
