@@ -7,7 +7,7 @@ class Organization(models.Model):
     description = models.TextField()
     free = models.BooleanField()
     tuition = models.TextField()
-    rating = models.DecimalField(max_digits = 1, decimal_places = 1)
+    rating = models.DecimalField(max_digits = 2, decimal_places = 1)
     category = models.TextField()
     address = models.TextField()
 
