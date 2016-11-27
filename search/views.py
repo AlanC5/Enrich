@@ -2,17 +2,11 @@
 Rendering the appropriate views
 '''
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
 
+from organization.models import Organization
 from .forms import SearchForm
 
 def index(request):
-    '''
-    Rendering index example
-    '''
-    return render(request, 'search/search_results.html')
-
-def get_search(request):
     '''
     Search Form and Get Responses
     '''
@@ -21,9 +15,14 @@ def get_search(request):
         form = SearchForm(request.POST)
 
         if form.is_valid():
-            # process data
+            # process data and render search results
+            query = form.cleaned_data['search_term']
+            results = Organization.objects.filter(name__contains=query)
+            print results
+
+            return render(request, 'search/search_results.html')
             # redirect to search results
-            return HttpResponseRedirect('/search/')
+            # return HttpResponseRedirect('/search/search_result/')
     # else render the form
     else:
         form = SearchForm()
