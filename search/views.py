@@ -27,7 +27,7 @@ def search_result(request):
             query = form.cleaned_data['search_term']
             results = Organization.objects.filter(name__contains=query)
             print results
-            return render(request, 'search/search_results.html')
+            return render(request, 'search/search_results.html', {'search_term': query, 'results':results})
     # else render the form
     else:
         return HttpResponseRedirect('/search/')
