@@ -1,0 +1,9 @@
+{% extends "organization/header.html" %}
+
+{% block content %}
+    <div id='organization' class='col-lg-12 organization-page orgs'>
+      <p>Name: <span class = 'name'>{{ organization.name }}</span></p>
+      <p>Location: <span class = 'address'> {{ organization.address }}</span></p>
+      <div class='map' id="map-canvas" style ="width: 320 px; height: 320px"></div>
+    </div>
+{% endblock %}
