@@ -1,2 +1,7 @@
-<h1>Search Results</h1>
-<h2>Search Testing</h2>
+<h1>Search Results for "{{search_term}}"</h1>
+
+<ul>
+{% for result in results %}
+    <li>{{ result.name }} -- {{ result.rating }} -- {{ result.category }}</li>
+{% endfor %}
+</ul>

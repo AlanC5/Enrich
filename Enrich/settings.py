@@ -85,6 +85,13 @@ DATABASES = {
     }
 }
 
+# Fixtures/Seeding Database
+# https://code.djangoproject.com/wiki/Fixtures
+FIXTURE_DIRS = (
+   #'organization/fixtures/organization_init_data.json',
+   #'user/fixtures/user_init_data.json',
+   os.path.join(BASE_DIR, 'fixtures'),
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

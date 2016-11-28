@@ -1,0 +1,132 @@
+[
+    {
+        "model": "organization.organization",
+        "pk": 1,
+        "fields": {
+            "name": "ACE Mentor Program",
+            "description": "ACE is an after school program that introduces you to careers in architecture and engineering",
+            "free": true,
+            "tuition": "0",
+            "rating": 4,
+            "category": "STEM",
+            "address": "55 main street, New York, NY"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 2,
+        "fields": {
+            "name": "All Star Summer Institute",
+            "description": "A 6-week program to inspire, and equip participants with the knowledge, skills, and resources needed to pursue paths leading to academics and/or careers in the technology and engineering sectors",
+            "free": true,
+            "tuition": "0",
+            "rating": 4.5,
+            "category": "STEM",
+            "address": "23 Mott Street, New York, NY"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 3,
+        "fields": {
+            "name": "THE BELLA ABZUG LEADERSHIP INSTITUTE (BALI)",
+            "description": "A free 2-week summer debate and leadership training program led by Impact Coalition, Inc. for high school students. Build leadership skills by working with accomplished female leaders in the fields of law, business, politics, government, the nonprofit sector, and academia.",
+            "free": true,
+            "tuition": "0",
+            "rating": 3.5,
+            "category": "Arts/Humanities",
+            "address": "HUNTER COLLEGE, OFFICE HE1233, 695 PARK AVE., NEW YORK, NY 10021"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 4,
+        "fields": {
+            "name": "ARTS MENTORING PROGRAM @ FREE ARTS NYC",
+            "description": "An arts program that includes painting, dance, drama, writing, music, sculpture, photography and other creative outlets year round",
+            "free": true,
+            "tuition": "0",
+            "rating": 5,
+            "category": "Arts/Humanities",
+            "address": "1431 Broadway, 8th Floor New York, NY 10018 United States"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 5,
+        "fields": {
+            "name": "BREAKTHROUGH NEW YORK",
+            "description": "Take enrichment classes, visit museums, and work with mentors on various issues including high school placement",
+            "free": true,
+            "tuition": "0",
+            "rating": 3,
+            "category": "Arts/Humanities",
+            "address": "123 William Street, 4th Floor, New York, NY 10038"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 6,
+        "fields": {
+            "name": "COLLEGE NOW",
+            "description": "A college prep program that matches public high schools with one or more of the 17 City University of New York (CUNY) colleges during the summer",
+            "free": true,
+            "tuition": "0",
+            "rating": 2,
+            "category": "Academic Prep",
+            "address": "16 Court Street, 3rd Floor Brooklyn, NY 11201"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 7,
+        "fields": {
+            "name": "EVERYONE READING",
+            "description": "After-school tutoring and summer intensive tutoring program. ",
+            "free": true,
+            "tuition": "0",
+            "rating": 4.5,
+            "category": "Academic Prep",
+            "address": "30 Broad Street, Suite 402 New York, NY 10004"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 8,
+        "fields": {
+            "name": "Street Hockey",
+            "description": "NYC Parks and the New York Rangers provide free youth street hockey clinics, presented by Coca-Cola, Get the Ball Rolling.  The clinics are for boys and girls ages 5-17, and provide instruction on the basics of street hockey, as well as tips on the importance of exercising and eating a balanced diet. All equipment is provided and no prior experience is necessary to participate.  Sessions run from December to February in the winter and July to August in the summer.  Registration is on a rolling basis beginning prior to the start of each session.",
+            "free": true,
+            "tuition": "0",
+            "rating": 4.5,
+            "category": "Sports",
+            "address": "232 West 60th Street Manhattan, Cross Streets: West End and Amsterdam Avenue"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 9,
+        "fields": {
+            "name": "CHKA Martial Arts",
+            "description": "CHKA’s classes in Kenpo Karate equip children of all ages with physical conditioning and skills which allow them to defend themselves. Moreover, the classes teach children to have the strength of character to avoid situations. By learning mastery of ancient martial arts techniques, children gain awareness of themselves and their surroundings, concentration, self confidence, self discipline, and important physical fitness . . . and fun! Classes include Lil Turtles (ages 3-4), Lil Ninjas (ages 4-7), Junior Samurai (ages 7-11), and Teens (ages 11-15).",
+            "free": false,
+            "tuition": "$150 for 100 days",
+            "rating": 4.5,
+            "category": "Sports",
+            "address": "34 Avenue A, 2nd Floor New York, NY 10009"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 10,
+        "fields": {
+            "name": "Piano Lessons NYC",
+            "description": "Piano Lessons NYC’s mission is to offer affordable private piano lessons in New York City and many areas of Brooklyn, Queens and Long Island for all ages and levels. We offer personalized one-on-one piano lessons either in the student’s home or at the National Opera Center conveniently located at 330 7th Ave. Piano Lessons NYC helps guide and foster students in a range of different musical styles including: classical, pop, jazz and musical theatre.",
+            "free": false,
+            "tuition": "$45 - 70+ per lesson",
+            "rating": 3,
+            "category": "Arts/Humanities",
+            "address": "National Opera Center 330 7th Avenue New York, NY 10001"
+        }
+    }
+]
