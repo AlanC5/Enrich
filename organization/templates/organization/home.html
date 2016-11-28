@@ -3,7 +3,8 @@
 {% block content %}
   <p>Organization Page</p>
     <div id='organization' class='col-lg-12 organization-page jumbotron'>
-      <p>Name: <span class = 'name'>{{ Organization.name }}</span></p>
-      <p>Location: <span class = 'location'> {{ Organization.address }}</span></p>
+      <p>Name: <span class = 'name'>{{ organization.name }}</span></p>
+      <p>Location: <span class = 'address'> {{ organization.address }}</span></p>
+      <div class='map' id="map-canvas" style ="width: 320 px; height: 320px"></div>
     </div>
 {% endblock %}
