@@ -1,8 +1,9 @@
 from __future__ import unicode_literals
 from django.db import models
 
+
 class User(models.Model):
-    user_id = models.AutoField(primary_key = True)
+    user_id = models.CharField(max_length=100, primary_key=True)
     email = models.CharField(max_length = 100)
     password = models.CharField(max_length = 30)
     name = models.CharField(max_length = 100)
