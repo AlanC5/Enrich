@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from models import Organization
+from .models import Organization
 import googlemaps
 
 
@@ -17,7 +17,7 @@ def organization_page(request, name):
     geocode_result = gmaps.geocode(address)
     latlong= geocode_result[0].itervalues().next()['location']
 
-    print latlong
+    print(latlong)
     lat = latlong['lat']
     lon = latlong['lng']
     return render(request, 'organization/organization.html', {'organization': organization[0], 'latitude': lat, 'longitude': lon})
