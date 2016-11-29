@@ -16,6 +16,8 @@ def organization_page(request, name):
 
     geocode_result = gmaps.geocode(address)
     latlong = (geocode_result[0].get('geometry')).get('location')
+    print(latlong)
+
     lat = latlong['lat']
     lon = latlong['lng']
     return render(request, 'organization/organization.html', {'organization': organization[0], 'latitude': lat, 'longitude': lon})
