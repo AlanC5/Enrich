@@ -10,10 +10,9 @@
    <div class="container-fluid" id='organizations-wrapper'>
      {% for organization in organizations %}
         <div class='col-lg-12 organization-page orgs'>
-           <p>Title: <span class='name'>{{ organization.name }}</span></p>
+           <p><a href='/organization/{{ organization.name }}' ><span class='name'>{{ organization.name }}</span></a></p>
            <p>Location: <span class='address'>{{ organization.address }}</span></p>
            <p>Description: <span class='review'>{{ organization.description }}</span></p>
-           <p><a href='/organization/{{ organization.o_name }}'>Check this organization out.</a></p>
        </div>
     {% endfor %}
    </div>
