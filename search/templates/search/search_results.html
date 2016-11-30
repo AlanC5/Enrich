@@ -2,6 +2,6 @@
 
 <ul>
 {% for result in results %}
-    <li>{{ result.name }} -- {{ result.rating }} -- {{ result.category }}</li>
+    <a href="/organization/{{ result.name }}"><li>{{ result.name }} -- {{ result.rating }} -- {{ result.category }}</li></a>
 {% endfor %}
 </ul>
