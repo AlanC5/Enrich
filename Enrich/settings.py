@@ -26,6 +26,7 @@ SECRET_KEY = 'nm(z-x!m73h8xjy!!c-$ord6pgvu$(i1_j%r^j%91!kifwtxd%'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'localhost',
     'ancient-lowlands-74290.herokuapp.com',
 ]
 
