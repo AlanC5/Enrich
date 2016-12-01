@@ -68,5 +68,45 @@
             "name": "John",
             "school_name": "P.S 999"
         }
+    },
+    {
+        "model": "user.user",
+        "pk": 8,
+        "fields": {
+            "email": "elan@gmail.com",
+            "password": "hisPassword",
+            "name": "Elan",
+            "school_name": "I.S 206"
+        }
+    },
+    {
+        "model": "user.user",
+        "pk": 8,
+        "fields": {
+            "email": "sam.jones@gmail.com",
+            "password": "somethingObvious",
+            "name": "Sam Jones",
+            "school_name": "I.S. 187 THE CHRISTA MCAULIFFE SCHOOL"
+        }
+    },
+    {
+        "model": "user.user",
+        "pk": 9,
+        "fields": {
+            "email": "Jenna@gmail.com",
+            "password": "somethingObvious",
+            "name": "Jenna",
+            "school_name": "High School for Math, Science and Engineering at City College"
+        }
+    },
+    {
+        "model": "user.user",
+        "pk": 10,
+        "fields": {
+            "email": "joseph.chen@gmail.com",
+            "password": "somethingObvious",
+            "name": "Joseph Chen",
+            "school_name": "P.S 206"
+        }
     }
 ]
