@@ -6,7 +6,7 @@
 
 <ul>
 {% for result in results %}
-    <a href="/organization/{{ result.name }}"><li>{{ result.name }} -- {{ result.rating }} -- {{ result.category }}</li></a>
+    <a href="/organization/{{ result.name }}"><li>{{ result.name }} -- {{ result.rating }} -- {{ result.category }} -- {{ result.contact_number }}</li></a>
 {% endfor %}
 </ul>
 
