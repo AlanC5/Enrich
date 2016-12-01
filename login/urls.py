@@ -1,4 +1,4 @@
-# Create your urls here.
+"""urls for the login"""
 from django.conf.urls import url
 from . import views
 

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_nose',
 ]
 
 MIDDLEWARE = [
@@ -91,9 +92,9 @@ DATABASES = {
 # Fixtures/Seeding Database
 # https://code.djangoproject.com/wiki/Fixtures
 FIXTURE_DIRS = (
-   #'organization/fixtures/organization_init_data.json',
-   #'user/fixtures/user_init_data.json',
-   os.path.join(BASE_DIR, 'fixtures'),
+    #'organization/fixtures/organization_init_data.json',
+    #'user/fixtures/user_init_data.json',
+    os.path.join(BASE_DIR, 'fixtures'),
 )
 
 # Password validation
@@ -114,6 +115,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+TEST_RUNNER = "django_nose.NoseTestSuiteRunner"
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package= Enrich,user,organization, search, login'
+    ]
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/

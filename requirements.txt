@@ -9,3 +9,5 @@ pylint==1.6.4
 requests==2.10.0
 six==1.10.0
 wrapt==1.10.8
+django_nose==1.4.4
+coverage==4.2
