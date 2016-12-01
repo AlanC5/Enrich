@@ -128,5 +128,122 @@
             "category": "Arts/Humanities",
             "address": "National Opera Center 330 7th Avenue New York, NY 10001"
         }
-    }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 11,
+        "fields": {
+            "name": "All Star Code Summer Institute",
+            "description": "A 6-week Summer Institute designed to educate, inspire, and equip participants with the knowledge, skills, and resources needed to pursue paths leading to academics and/or careers in the technology and engineering sectors",
+            "free": true,
+            "tuition": "$0",
+            "rating": 3,
+            "category": "STEM",
+            "address": "601 W. 26th Street, Suite 325, New York, NY 10001"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 12,
+        "fields": {
+            "name": "Breakthrough New York",
+            "description": "Six-years of tutoring, classes and more to get ready for college. Runs year-round, including summers and the school year",
+            "free": true,
+            "tuition": "$0",
+            "rating": 3,
+            "category": "Academic Prep",
+            "address": "123 William Street, 4th Floor, New York, NY 10038"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 13,
+        "fields": {
+            "name": "Breakthrough New York",
+            "description": "Six-years of tutoring, classes and more to get ready for college. Runs year-round, including summers and the school year",
+            "free": true,
+            "tuition": "$0",
+            "rating": 3,
+            "category": "Academic Prep",
+            "address": "123 William Street, 4th Floor, New York, NY 10038"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 14,
+        "fields": {
+            "name": "College Now at Hunter College",
+            "description": "Free classes taught by Hunter faculty to prepare high-schoolers for college work during fall and spring semesters",
+            "free": true,
+            "tuition": "$0",
+            "rating": 3,
+            "category": "Academic Prep",
+            "address": "16 Court Street, 3rd Floor, Brooklyn, NY 11201"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 15,
+        "fields": {
+            "name": "Top Honors",
+            "description": "Free math help on Saturday mornings and Tuesday evenings during the school year",
+            "free": true,
+            "tuition": "$0",
+            "rating": 3,
+            "category": "STEM",
+            "address": "154 W. 93rd St New York NY 10025"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 16,
+        "fields": {
+            "name": "",
+            "description": "A pre-college science enrichment program for talented middle and high school students in NYC",
+            "free": true,
+            "tuition": "$0",
+            "rating": 3,
+            "category": "Academic Prep",
+            "address": ""
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 17,
+        "fields": {
+            "name": " Baruch College STEP (Science and Technology Entry Program) Academy",
+            "description": "A pre-college science enrichment program for talented middle and high school students in NYC",
+            "free": true,
+            "tuition": "$0",
+            "rating": 3,
+            "category": "STEM",
+            "address": "55 Lexington Avenue, New York, NY 10010-5585"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 18,
+        "fields": {
+            "name": "Best Excellence in Science and Technology at NYU",
+            "description": "A pre-college science enrichment program for talented middle and high school students in NYC",
+            "free": true,
+            "tuition": "$0",
+            "rating": 3,
+            "category": "STEM",
+            "address": "18 Washington Place New York, NY 10003"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 19,
+        "fields": {
+            "name": "Brooklyn Botanic Garden",
+            "description": "Science classes in the spring and summer",
+            "free": true,
+            "tuition": "$0",
+            "rating": 3,
+            "category": "STEM",
+            "address": "150 Eastern Parkway Brooklyn NY"
+        }
+      }
 ]
