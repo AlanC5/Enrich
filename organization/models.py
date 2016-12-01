@@ -12,8 +12,11 @@ class Organization(models.Model):
     free = models.BooleanField()
     tuition = models.TextField()
     rating = models.DecimalField(max_digits = 2, decimal_places = 1)
-    category = models.TextField()
-    address = models.TextField()
+    category = models.TextField(null=False)
+    address = models.TextField(null=True)
+    contact_number = models.TextField(null=True)
+    website = models.TextField(null=True)
+    imageURL = models.TextField(null=True)
 
 
     def __str__(self):
