@@ -169,7 +169,10 @@
             "tuition": "$0",
             "rating": 3,
             "category": "STEM",
-            "address": "601 W. 26th Street, Suite 325, New York, NY 10001"
+            "address": "601 W. 26th Street, Suite 325, New York, NY 10001",
+            "contact_number": "Team@allstarcode.org",
+            "website": "http://www.allstarcode.org",
+            "imageURL": "http://www.allstarcode.org/wp-content/uploads/2014/09/LEAD-PHOTO54135077b30a1.jpg"
         }
     },
     {
@@ -182,20 +185,26 @@
             "tuition": "$0",
             "rating": 3,
             "category": "Academic Prep",
-            "address": "123 William Street, 4th Floor, New York, NY 10038"
+            "address": "123 William Street, 4th Floor, New York, NY 10038",
+            "contact_number": "(646) 747-BTNY",
+            "website": "http://www.btny.org",
+            "imageURL": "https://static1.squarespace.com/static/53d93edfe4b0fa5b6962b343/53eed53ce4b0880c7d4f60bc/53eed53ee4b06d8748b67e88/1408161098135/IMG_2802.jpg?format=1000w"
         }
     },
     {
         "model": "organization.organization",
         "pk": 13,
         "fields": {
-            "name": "Breakthrough New York",
-            "description": "Six-years of tutoring, classes and more to get ready for college. Runs year-round, including summers and the school year",
+            "name": "Cooper Union Research Internship",
+            "description": "A summer internship focused on engineering, math, chemistry, physics, and astronomy",
             "free": true,
             "tuition": "$0",
             "rating": 3,
-            "category": "Academic Prep",
-            "address": "123 William Street, 4th Floor, New York, NY 10038"
+            "category": "STEM",
+            "address": "7 East 7th Street New York NY",
+            "contact_number": "summerSTEM@cooper.edu",
+            "website": "http://cooper.edu/engineering/summer-stem",
+            "imageURL": "http://cooper.edu/sites/default/files/lead.jpg"
         }
     },
     {
@@ -208,7 +217,10 @@
             "tuition": "$0",
             "rating": 3,
             "category": "Academic Prep",
-            "address": "16 Court Street, 3rd Floor, Brooklyn, NY 11201"
+            "address": "16 Court Street, 3rd Floor, Brooklyn, NY 11201",
+            "contact_number": "collegenow@cuny.edu",
+            "website": "http://collegenow.cuny.edu/about-college-now/",
+            "imageURL": "http://collegenow.cuny.edu/wp-content/themes/collegenow/uploads/about-college-now.jpg"
         }
     },
     {
@@ -221,20 +233,26 @@
             "tuition": "$0",
             "rating": 3,
             "category": "STEM",
-            "address": "154 W. 93rd St New York NY 10025"
+            "address": "154 W. 93rd St New York NY 10025",
+            "contact_number": "info@tophonors.org",
+            "website": "http://www.tophonors.org",
+            "imageURL": "https://static1.squarespace.com/static/529d28e3e4b0690cc411294f/529e19f6e4b065d1f24f13e9/529e7c71e4b0b7aa2efa6616/1386118259125/home17.jpg?format=1000w"
         }
     },
     {
         "model": "organization.organization",
         "pk": 16,
         "fields": {
-            "name": "",
-            "description": "A pre-college science enrichment program for talented middle and high school students in NYC",
+            "name": "Columbia University Science Honors Program",
+            "description": "College classes in physics, chemistry and biology during school year",
             "free": true,
             "tuition": "$0",
             "rating": 3,
             "category": "Academic Prep",
-            "address": ""
+            "address": "550 West 120th Street New York, NY 10027",
+            "contact_number": "(212) 854-3354",
+            "website": "http://www.columbia.edu/cu/shp/",
+            "imageURL": "http://www.columbia.edu/cu/shp/M100.jpg"
         }
     },
     {
@@ -247,7 +265,10 @@
             "tuition": "$0",
             "rating": 3,
             "category": "STEM",
-            "address": "55 Lexington Avenue, New York, NY 10010-5585"
+            "address": "55 Lexington Avenue, New York, NY 10010-5585",
+            "contact_number": "646-312-4298",
+            "website": "http://www.baruch.cuny.edu/step/",
+            "imageURL": "http://www.baruch.cuny.edu/step/images/WebsiteAnatomy.jpg"
         }
     },
     {
@@ -260,7 +281,10 @@
             "tuition": "$0",
             "rating": 3,
             "category": "STEM",
-            "address": "18 Washington Place New York, NY 10003"
+            "address": "18 Washington Place New York, NY 10003",
+            "contact_number": "anna.ortegachavolla@nyu.edu",
+            "website": "http://www.nyu.edu/admissions/undergraduate-admissions/how-to-apply/all-freshmen-applicants/opportunity-programs/middle-and-high-school-program.html",
+            "imageURL": "http://www.nyu.edu/content/nyu/en/admissions/undergraduate-admissions/how-to-apply/all-freshmen-applicants/opportunity-programs/middle-and-high-school-program/jcr:content/2/par-right/nyuimage_0.img.1280.high.jpg/1471374748988.jpg"
         }
     },
     {
@@ -273,7 +297,10 @@
             "tuition": "$0",
             "rating": 3,
             "category": "STEM",
-            "address": "150 Eastern Parkway Brooklyn NY"
+            "address": "150 Eastern Parkway Brooklyn NY",
+            "contact_number": "718-623-7200",
+            "website": "http://www.bbg.org/learn",
+            "imageURL": "http://www.bbg.org/img/uploads/learn/inline/eduindex_childrensclasses.jpg"
         }
       }
 ]
