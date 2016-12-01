@@ -25,7 +25,10 @@ SECRET_KEY = 'nm(z-x!m73h8xjy!!c-$ord6pgvu$(i1_j%r^j%91!kifwtxd%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'ancient-lowlands-74290.herokuapp.com',
+]
 
 
 # Application definition
@@ -59,7 +62,7 @@ ROOT_URLCONF = 'Enrich.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
