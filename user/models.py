@@ -3,10 +3,10 @@ from django.db import models
 
 
 class User(models.Model):
-    user_id = models.CharField(max_length=100, primary_key=True)
-    email = models.CharField(max_length = 100)
-    password = models.CharField(max_length = 30)
-    name = models.CharField(max_length = 100)
+    user_id = models.IntegerField(primary_key=True)
+    email = models.CharField(null=False, max_length = 100)
+    password = models.CharField(null=False, max_length = 30)
+    name = models.CharField(null=False, max_length = 100)
     school_name = models.CharField(max_length = 100)
 
     def __str__(self):

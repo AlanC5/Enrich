@@ -1,7 +1,7 @@
 [
     {
         "model": "user.user",
-        "pk": "1",
+        "pk": 1,
         "fields": {
             "email": "anthony.shalagin@gmail.com",
             "password": "hidden",
@@ -11,7 +11,7 @@
     },
     {
         "model": "user.user",
-        "pk": "2",
+        "pk": 2,
         "fields": {
             "email": "billy@gmail.com",
             "password": "hidden",
@@ -21,7 +21,7 @@
     },
     {
         "model": "user.user",
-        "pk": "3",
+        "pk": 3,
         "fields": {
             "email": "joe.smith@verizon.net",
             "password": "hidden",
@@ -31,7 +31,7 @@
     },
     {
         "model": "user.user",
-        "pk": "4",
+        "pk": 4,
         "fields": {
             "email": "angelica.torres@yahoo.com",
             "password": "hidden",
@@ -41,7 +41,7 @@
     },
     {
         "model": "user.user",
-        "pk": "5",
+        "pk": 5,
         "fields": {
             "email": "michael.burton@gmail.com",
             "password": "hidden",
@@ -51,7 +51,7 @@
     },
     {
         "model": "user.user",
-        "pk": "6",
+        "pk": 6,
         "fields": {
             "email": "victoria@gmail.com",
             "password": "hidden",
@@ -61,7 +61,7 @@
     },
     {
         "model": "user.user",
-        "pk": "7",
+        "pk": 7,
         "fields": {
             "email": "john123@gmail.com",
             "password": "somethingObvious",
