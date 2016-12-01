@@ -158,5 +158,85 @@
             "website": "http://www.pianolessonsnyc.net/",
             "imageURL": "http://www.pianolessonsnyc.net/wp-content/uploads/2014/10/pianolessonsnyc.net-recital-group-380x240.jpg"
         }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 11,
+        "fields": {
+            "name": "CHKA Martial Arts",
+            "description": "CHKA’s classes in Kenpo Karate equip children of all ages with physical conditioning and skills which allow them to defend themselves. Moreover, the classes teach children to have the strength of character to avoid situations. By learning mastery of ancient martial arts techniques, children gain awareness of themselves and their surroundings, concentration, self confidence, self discipline, and important physical fitness . . . and fun! Classes include Lil Turtles (ages 3-4), Lil Ninjas (ages 4-7), Junior Samurai (ages 7-11), and Teens (ages 11-15).",
+            "free": false,
+            "tuition": "$150 for 100 days",
+            "rating": 4.5,
+            "category": "Sports",
+            "address": "34 Avenue A, 2nd Floor New York, NY 10009",
+            "contact_number": "646-692-6155",
+            "website": "http://www.chka.org/",
+            "imageURL": "http://www.chka.org/wp-content/uploads/2013/03/10580018_798124923552079_2735686423289523283_n.jpg"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 12,
+        "fields": {
+            "name": "PENCIL",
+            "description": "PENCIL is the leader in creating innovative and impactful models of ongoing collaboration between business and public schools.",
+            "free": true,
+            "tuition": "free",
+            "rating": 4.0,
+            "category": "Career",
+            "address": "30 West 26th Street, 5th Floor New York, NY 10010",
+            "contact_number": "646-638-0565",
+            "website": "https://pencil.org/",
+            "imageURL": "https://pencil.org/wp-content/uploads/2015/06/pencil_tag_4color_2014.png"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 13,
+        "fields": {
+            "name": "FIRST Robotics",
+            "description": "As part of a FIRST team, kids get to apply math and science knowledge, solve problems, make decisions, communicate complex ideas, collaborate as part of a team, exercise leadership, manage resources, create and execute business plans – all essential skills in any successful technological enterprise.",
+            "free": true,
+            "tuition": "free",
+            "rating": 3.5,
+            "category": "Academic Prep",
+            "address": "101 Avenue of the Americas 18th Floor New York, NY 10013",
+            "contact_number": "800-432-6351",
+            "website": "http://www.nycfirst.org/",
+            "imageURL": "http://oklahomafirst.org/FIRSTvert_RGB.jpg"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 14,
+        "fields": {
+            "name": "Upstairs After School Art Program",
+            "description": "Upstairs at 83 Hester is a weekly children’s art program that takes a process-oriented approach to art making. The classes introduce participants to ways of seeing, sensing, thinking, and making that are explored through the arts. Together we will collaborate on projects, encounter works by contemporary artists, and learn new vocabularies. Guest artists whose work relates to our course theme will visit to co-teach lessons.",
+            "free": true,
+            "tuition": "free",
+            "rating": 4.0,
+            "category": "Arts/Humanities",
+            "address": "83A Hester Street, New York, NY, 10002",
+            "contact_number": "917-415-6152",
+            "website": "http://www.upstairs83.com/",
+            "imageURL": "http://www.upstairs83.com/uploads/1/1/0/4/11043497/6970685.jpg?489"
+        }
+    },
+    {
+        "model": "organization.organization",
+        "pk": 15,
+        "fields": {
+            "name": "BELL",
+            "description": "BELL exists to transform the academic achievements, self-confidence, and life trajectories of children living in under-resourced communities.",
+            "free": true,
+            "tuition": "free",
+            "rating": 3.0,
+            "category": "Arts/Humanities",
+            "address": "1460 Broadway New York, NY 10036",
+            "contact_number": "646-588-7900",
+            "website": "http://www.experiencebell.org/",
+            "imageURL": "https://engage.experiencebell.org/templates/bell/original/images/logo.png"
+        }
     }
 ]
