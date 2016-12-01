@@ -9,20 +9,26 @@
             "tuition": "0",
             "rating": 4,
             "category": "STEM",
-            "address": "55 main street, New York, NY"
+            "address": "55 main street, New York, NY",
+            "contact_number": "571-297-6869",
+            "website": "http://www.acementor.org/",
+            "imageURL": "http://www.acementor.org/files/3814/7463/4821/ACEimage.jpg"
         }
     },
     {
         "model": "organization.organization",
         "pk": 2,
         "fields": {
-            "name": "All Star Summer Institute",
-            "description": "A 6-week program to inspire, and equip participants with the knowledge, skills, and resources needed to pursue paths leading to academics and/or careers in the technology and engineering sectors",
+            "name": "All Star Code",
+            "description": "All Star Code (ASC), our flagship program, is a six-week summer program for high school rising male sophomores, juniors, and seniors here in New York City. The 2015 Summer Intensive will consist of 2 cohorts of 40 students total. The curriculum includes a rigorous computer science course, but also a soft-skills curriculum (leadership, innovation, team-work, etc.) that would help our students stand out years later when they enter the talent pipeline of top companies. ASC’s purpose is to give young African-American men an early introduction to the world of technology, providing a mode of entry to an industry that has been closed to them. (To twist the old Walt Disney line: “If you can’t see it, you can’t dream it.”)",
             "free": true,
             "tuition": "0",
             "rating": 4.5,
             "category": "STEM",
-            "address": "23 Mott Street, New York, NY"
+            "address": "601 W. 26th Street, Suite 325, New York, NY 10001",
+            "contact_number": null,
+            "website": "http://www.allstarcode.org/",
+            "imageURL": "http://www.allstarcode.org/wp-content/uploads/2014/03/%C2%A9Boat-Ashore-Photography-24-IMG_425511.23.jpg"
         }
     },
     {
@@ -35,7 +41,10 @@
             "tuition": "0",
             "rating": 3.5,
             "category": "Arts/Humanities",
-            "address": "HUNTER COLLEGE, OFFICE HE1233, 695 PARK AVE., NEW YORK, NY 10021"
+            "address": "HUNTER COLLEGE, OFFICE HE1233, 695 PARK AVE., NEW YORK, NY 10021",
+            "contact_number": "212-650-3071 ",
+            "website": "http://www.abzuginstitute.org/",
+            "imageURL": "https://static1.squarespace.com/static/5464cb1ae4b09b76c971f5f3/t/571656f6f699bb6763044250/1461081883915/?format=500w"
         }
     },
     {
@@ -48,7 +57,10 @@
             "tuition": "0",
             "rating": 5,
             "category": "Arts/Humanities",
-            "address": "1431 Broadway, 8th Floor New York, NY 10018 United States"
+            "address": "1431 Broadway, 8th Floor New York, NY 10018 United States",
+            "contact_number": "212-974-9092",
+            "website": "http://www.freeartsnyc.org/",
+            "imageURL": "http://www.freeartsnyc.org/wp-content/uploads/2016/08/AnthonyHart_1.jpg"
         }
     },
     {
@@ -61,7 +73,10 @@
             "tuition": "0",
             "rating": 3,
             "category": "Arts/Humanities",
-            "address": "123 William Street, 4th Floor, New York, NY 10038"
+            "address": "123 William Street, 4th Floor, New York, NY 10038",
+            "contact_number": "646-747-2869",
+            "website": "http://www.btny.org/",
+            "imageURL": "https://static1.squarespace.com/static/53d93edfe4b0fa5b6962b343/t/53e257f3e4b08ac0a8edadd4/1407342615002/?format=300w"
         }
     },
     {
@@ -74,7 +89,10 @@
             "tuition": "0",
             "rating": 2,
             "category": "Academic Prep",
-            "address": "16 Court Street, 3rd Floor Brooklyn, NY 11201"
+            "address": "16 Court Street, 3rd Floor Brooklyn, NY 11201",
+            "contact_number": "718-997-4297",
+            "website": "http://collegenow.cuny.edu/",
+            "imageURL": "http://collegenow.cuny.edu/wp-content/gallery/home-page/home_feature_getstarted.jpg"
         }
     },
     {
@@ -87,7 +105,10 @@
             "tuition": "0",
             "rating": 4.5,
             "category": "Academic Prep",
-            "address": "30 Broad Street, Suite 402 New York, NY 10004"
+            "address": "30 Broad Street, Suite 402 New York, NY 10004",
+            "contact_number": "917-903-2954",
+            "website": "http://everyonereading.org/",
+            "imageURL": "http://everyonereading.org/wp-content/uploads/2011/11/kids.png"
         }
     },
     {
@@ -100,7 +121,10 @@
             "tuition": "0",
             "rating": 4.5,
             "category": "Sports",
-            "address": "232 West 60th Street Manhattan, Cross Streets: West End and Amsterdam Avenue"
+            "address": "232 West 60th Street Manhattan, Cross Streets: West End and Amsterdam Avenue",
+            "contact_number": null,
+            "website": "https://www.nycgovparks.org/reg/youth-street-hockey",
+            "imageURL": "https://www.nycgovparks.org/pagefiles/60/street-hockey.jpg"
         }
     },
     {
@@ -113,7 +137,10 @@
             "tuition": "$150 for 100 days",
             "rating": 4.5,
             "category": "Sports",
-            "address": "34 Avenue A, 2nd Floor New York, NY 10009"
+            "address": "34 Avenue A, 2nd Floor New York, NY 10009",
+            "contact_number": "646-692-6155",
+            "website": "http://www.chka.org/",
+            "imageURL": "http://www.chka.org/wp-content/uploads/2013/03/10580018_798124923552079_2735686423289523283_n.jpg"
         }
     },
     {
@@ -126,7 +153,10 @@
             "tuition": "$45 - 70+ per lesson",
             "rating": 3,
             "category": "Arts/Humanities",
-            "address": "National Opera Center 330 7th Avenue New York, NY 10001"
+            "address": "National Opera Center 330 7th Avenue New York, NY 10001",
+            "contact_number": "347-302-1342",
+            "website": "http://www.pianolessonsnyc.net/",
+            "imageURL": "http://www.pianolessonsnyc.net/wp-content/uploads/2014/10/pianolessonsnyc.net-recital-group-380x240.jpg"
         }
     }
 ]

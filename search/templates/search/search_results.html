@@ -1,7 +1,13 @@
+{% extends "search/search_base.html" %}
+
+{% block content %}
+
 <h1>Search Results for "{{search_term}}"</h1>
 
 <ul>
 {% for result in results %}
-    <li>{{ result.name }} -- {{ result.rating }} -- {{ result.category }}</li>
+    <a href="/organization/{{ result.name }}"><li id = "organization_{{ result.organization_id }}">{{ result.name }} -- {{ result.rating }} -- {{ result.category }} -- {{ result.contact_number }}</li></a>
 {% endfor %}
 </ul>
+
+{% endblock content %}
