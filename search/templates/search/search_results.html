@@ -3,11 +3,43 @@
 {% block content %}
 
 <h1>Search Results for "{{search_term}}"</h1>
+<div class="container">
 
-<ul>
-{% for result in results %}
-    <a href="/organization/{{ result.name }}"><li id = "organization_{{ result.organization_id }}">{{ result.name }} -- {{ result.rating }} -- {{ result.category }} -- {{ result.contact_number }}</li></a>
-{% endfor %}
-</ul>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">{{search_term}}
+            </h1>
+        </div>
+    </div>
+
+    {% for result in results %}
+    <div class="row">
+        <div class="col-md-7">
+            <a href="#">
+                <img class="img-responsive" src="{{result.imageURL}}" alt="">
+            </a>
+        </div>
+        <div class="col-md-5">
+            <h3>{{ result.name }}</h3>
+            <h4>{{ result.category }}</h4>
+            <h5>{{ result.rating }}</h5>
+            <p>{{ result.description }}</p>
+            <a class="btn btn-primary" href="/organization/{{ result.name }}">View Organization <span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
+    </div>
+
+    <hr>
+    {% endfor %}
+
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright © Enrich 2016</p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
 
 {% endblock content %}
