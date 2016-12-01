@@ -3,24 +3,26 @@ Tests for Search functionality
 '''
 from django.test import TestCase
 from django.test.client import RequestFactory
-from .views import *
 from organization.models import Organization
+
+from .views import index, search_result
 # Create your tests here.
 
 class SearchTestCase(TestCase):
+    """A Search functionality test class"""
     def setUp(self):
         self.rf = RequestFactory()
-        Organization.objects.create( organization_id = 1,
-            name = "a",
-            category = "a",
-            description = "blah",
-            free = False,
-            tuition = 1000,
-            rating = 2,
-            address = "123 Elm St",
-            contact_number = "1111",
-            website = "www.enrich.edu",
-            imageURL = "a")
+        Organization.objects.create(organization_id=1,
+                                    name="a",
+                                    category="a",
+                                    description="blah",
+                                    free=False,
+                                    tuition=1000,
+                                    rating=2,
+                                    address="123 Elm St",
+                                    contact_number="1111",
+                                    website="www.enrich.edu",
+                                    imageURL="a")
 
 
     def test_search_page_exists(self):

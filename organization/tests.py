@@ -1,12 +1,11 @@
 """Tests the organization app"""
-
 from django.test import TestCase
 from .models import Organization
 
 # Create your tests here.
 
-def OrganizationTestCase(TestCase):
-
+class OrganizationTestCase(TestCase):
+    """Organization Test Case"""
     def setUp(self):
         """Sets up test db"""
         Organization.objects.create(organization_id=1,
@@ -27,7 +26,7 @@ def OrganizationTestCase(TestCase):
 
         self.assertTrue(entry.name == "a")
 
-    def test_adding_and_removing_from_db(self):
+    def test_removing_from_db(self):
         """Tests if I can add and remove to/from db"""
 
         Organization.objects.create(name="b",
