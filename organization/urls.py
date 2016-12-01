@@ -1,4 +1,4 @@
-# Create your urls here.
+"""Organization urls"""
 from django.conf.urls import url
 from . import views
 
