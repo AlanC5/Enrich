@@ -25,7 +25,7 @@ def search_result(request):
         if form.is_valid():
             # process data and render search results
             query = form.cleaned_data['search_term']
-            results = Organization.objects.filter(name__contains=query)
+            results = Organization.objects.filter(description__contains=query)
             print(results)
             return render(request, 'search/search_results.html', {'search_term': query, 'results':results})
     # else render the form
