@@ -41,8 +41,8 @@ class OrganizationTestCase(TestCase):
                                     imageURL="a")
 
         entry = Organization.objects.get(organization_id=2)
-        self.assertNotNull(entry)
+        self.assertTrue(entry)
 
-        Organization.objects.remove(organization_id=2)
-        entry = Organization.objects.get(organization_id=2)
-        self.assertNull(entry)
+        entry.delete()
+        entry = Organization.objects.all()
+        self.assertTrue(len(entry) == 1)
