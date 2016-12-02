@@ -27,7 +27,12 @@ def search_result(request):
             # process data and render search results
             query = form.cleaned_data['search_term']
             results = Organization.objects.filter(description__contains=query)
-            
+            # starRange and negativeStarRange to render stars
+            for result in results:
+                rating = result.rating
+                result.starRange = range(int(rating))
+                result.negativeStarRange = range(5 - int(rating))
+
             return render(request, 'search/search_results.html', {'search_term': query, 'results':results})
     # else render the form
     else:
