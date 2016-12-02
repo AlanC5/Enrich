@@ -1,9 +1,10 @@
 """Organization views"""
-
-from django.shortcuts import render
+from datetime import datetime
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import googlemaps
 from Enrich.models import Reviews
+from user.models import User
 from .models import Organization
 
 
@@ -29,7 +30,7 @@ def organization_page(request, name):
     lat = latlong['lat']
     lon = latlong['lng']
     return render(request, 'organization/organization.html',
-                  {'organization': organization[0], 'latitude': lat, 'longitude': lon 'reviews': reviews})
+                  {'organization': organization[0], 'latitude': lat, 'longitude': lon, 'reviews': reviews})
 
 def submit_form(request):
     user_id = request.POST["user_id"]
@@ -43,5 +44,5 @@ def submit_form(request):
                             user_id=User.objects.get(pk=user_id),
                             organization_id=Organization.objects.get(pk=organization_id))
 
-    return redirect('organization/' + str(organization_id))
+    return redirect('/')
 
