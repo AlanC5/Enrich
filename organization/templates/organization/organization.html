@@ -23,27 +23,35 @@
             </div>
             <div class="row">
                 <h3>Reviews</h3>
+                <form action = "{% url 'submit_form' %}" method = "post">{% csrf_token %}<br><br><br>
+                                    <input type="hidden" name="organization_id" value="{{ organization.organization_id }}">
+                                    User ID:<input type = "number" name="user_id" value = "1"><br>
+                                    Review: <input type = "text" name="review_text"><br>
+                                    Rating: <input type="text" name="rating"><br>
+                                    <input type="submit" value="Submit"><br>
 
                 <!-- Place jinja2 loop statement here -->
+                {% for review in reviews %}
                 <div class="row">
                     <div class="col-lg-4 review-person">
                         <p>
-                            {{ user.name }} Alan Chen
+                            {{ rev.user.name }} Alan Chen
                         </p>
-                        <p>
+                        <!--<p>
                             {{ user.school_name }} CUNY Baruch
-                        </p>
+                        </p><!-->
+
                     </div>
                     <div class="col-lg-8 review-text">
                         <p>
-                            {{ review.rating }} 4 Stars | {{ review.date }} 10/14/2016
+                            {{ review.rating }} | {{ review.date }}
                         </p>
                         <p>
                             {{ review.review_text }}
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor vel velit id interdum. Vivamus tempus tortor vitae libero hendrerit, sed mollis est pharetra. Sed tellus quam, ornare quis orci maximus, efficitur rhoncus lacus. In at tellus massa. Sed finibus arcu ut metus rhoncus, ut porta nisi luctus. Curabitur eu nisl ac ante ornare lobortis quis vel est. Proin varius eleifend sem, egestas consequat massa ultricies in. Nullam eu lectus rutrum, finibus ante sed, tempor enim. Vestibulum finibus lobortis massa, et congue dui rhoncus ac. In ac justo et sapien efficitur varius nec a ante. In feugiat tempor aliquam. Sed a elit dignissim, tincidunt erat at, lacinia enim. Vivamus feugiat sem sed luctus viverra. Phasellus eros diam, congue sed elit at, lacinia dignissim lacus.
                         </p>
                     </div>
                 </div>
+                {% endfor %}
                 <!-- End loop -->
             </div>
 
