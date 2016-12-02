@@ -22,12 +22,14 @@ def organization_page(request, name):
 
     geocode_result = GMAPS.geocode(address)
     latlong = (geocode_result[0].get('geometry')).get('location')
-    print(latlong)
+    #print(latlong)
 
+    reviews = Reviews.objects.filter(organization_id = organization[0])
+    
     lat = latlong['lat']
     lon = latlong['lng']
     return render(request, 'organization/organization.html',
-                  {'organization': organization[0], 'latitude': lat, 'longitude': lon})
+                  {'organization': organization[0], 'latitude': lat, 'longitude': lon 'reviews': reviews})
 
 def submit_form(request):
     user_id = request.POST["user_id"]

@@ -10,6 +10,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('organization', '__first__'),
         ('user', '__first__'),
     ]
 
