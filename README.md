@@ -25,4 +25,4 @@ python manage.py test
 ## Pylint:
 Please run the following line below on all of our apps.
 
-pylint --rcfile .pylintrc <app_name> 
+pylint --load-plugins=pylint_django ./* --rcfile .pylintrc
