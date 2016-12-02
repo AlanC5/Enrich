@@ -3,6 +3,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import googlemaps
+from Enrich.models import Reviews
 from .models import Organization
 
 
@@ -27,3 +28,18 @@ def organization_page(request, name):
     lon = latlong['lng']
     return render(request, 'organization/organization.html',
                   {'organization': organization[0], 'latitude': lat, 'longitude': lon})
+
+def submit_form(request):
+    user_id = request.POST["user_id"]
+    organization_id = request.POST["organization_id"]
+    rating = request.POST["rating"]
+    review_text = request.POST["review_text"]
+
+    Reviews.objects.create(review_text = review_text,
+                            rating=rating,
+                            date=datetime.now(),
+                            user_id=User.objects.get(pk=user_id),
+                            organization_id=Organization.objects.get(pk=organization_id))
+
+    return redirect('organization/' + str(organization_id))
+
