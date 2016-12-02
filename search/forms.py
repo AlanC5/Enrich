@@ -16,13 +16,15 @@ class FilterSearchForm(forms.Form):
     Defining the input fields for Filter Search
     Defined Here, but not templated for HTML and Stlying Reasons
     '''
-    CATEGORYCHOICES=[('STEM','STEM'),
-         ('Arts/Humanities','Arts/Humanities'),
-         ('Academic Prep', 'Academic Prep'),
-         ('Sports', 'Sports')]
-    PRICECHOICES=[('FREE', "FREE"),
-                ('TUITION', 'TUITION')]
+    CATEGORYCHOICES = [
+        ('STEM', 'STEM'),
+        ('Arts/Humanities', 'Arts/Humanities'),
+        ('Academic Prep', 'Academic Prep'),
+        ('Sports', 'Sports')]
+    PRICECHOICES = [
+        ('FREE', "FREE"),
+        ('TUITION', 'TUITION')]
 
     search_term = forms.CharField(label="", max_length=100)
     category = forms.MultipleChoiceField(choices=CATEGORYCHOICES, widget=forms.CheckboxSelectMultiple())
-    price  = forms.ChoiceField(choices=PRICECHOICES, widget=forms.RadioSelect())
+    price = forms.ChoiceField(choices=PRICECHOICES, widget=forms.RadioSelect())

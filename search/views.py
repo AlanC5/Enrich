@@ -12,8 +12,8 @@ def index(request):
     Search Form and Get Responses
     '''
     form = SearchForm()
-    filterForm = FilterSearchForm()
-    return render(request, 'search/search.html', {'form' : form, 'filterForm' : filterForm})
+    filterform = FilterSearchForm()
+    return render(request, 'search/search.html', {'form' : form, 'filterForm' : filterform})
 
 def search_result(request):
     '''
