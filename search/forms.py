@@ -24,5 +24,5 @@ class FilterSearchForm(forms.Form):
                 ('TUITION', 'TUITION')]
 
     search_term = forms.CharField(label="", max_length=100)
-    category = forms.ChoiceField(choices=CATEGORYCHOICES, widget=forms.RadioSelect())
+    category = forms.MultipleChoiceField(choices=CATEGORYCHOICES, widget=forms.CheckboxSelectMultiple())
     price  = forms.ChoiceField(choices=PRICECHOICES, widget=forms.RadioSelect())

@@ -14,7 +14,12 @@
                 </div>
                 <div class="col-lg-6">
                     <h3>
-                        {{ organization.rating }} Stars
+                        {% for i in starRange %}
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        {% endfor %}
+                        {% for i in negativeStarRange %}
+                            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                        {% endfor %}
                     </h3>
                     <p>
                         {{ organization.description }}
