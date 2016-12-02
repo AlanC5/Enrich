@@ -5,6 +5,24 @@ from django import forms
 
 class SearchForm(forms.Form):
     '''
-    Defining the input fields
+    Defining the input fields for Search Navbar
+    Defined Here, but not templated for HTML and Stlying Reasons
     '''
     search_term = forms.CharField(label="", max_length=100)
+
+
+class FilterSearchForm(forms.Form):
+    '''
+    Defining the input fields for Filter Search
+    Defined Here, but not templated for HTML and Stlying Reasons
+    '''
+    CATEGORYCHOICES=[('STEM','STEM'),
+         ('Arts/Humanities','Arts/Humanities'),
+         ('Academic Prep', 'Academic Prep'),
+         ('Sports', 'Sports')]
+    PRICECHOICES=[('FREE', "FREE"),
+                ('TUITION', 'TUITION')]
+
+    search_term = forms.CharField(label="", max_length=100)
+    category = forms.ChoiceField(choices=CATEGORYCHOICES, widget=forms.RadioSelect())
+    price  = forms.ChoiceField(choices=PRICECHOICES, widget=forms.RadioSelect())

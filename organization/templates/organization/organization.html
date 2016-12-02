@@ -27,7 +27,7 @@
                                     <input type="hidden" name="organization_id" value="{{ organization.organization_id }}">
                                     User ID:<input type = "number" name="user_id" value = "1"><br>
                                     Review: <input type = "text" name="review_text"><br>
-                                    Rating: <input type="text" name="rating"><br>
+                                    Rating: <input type="number" min="1" max="5" name="rating"><br>
                                     <input type="submit" value="Submit"><br>
 
                 <!-- Place jinja2 loop statement here -->
@@ -37,9 +37,9 @@
                         <p>
                             {{ rev.user.name }} Alan Chen
                         </p>
-                        <!--<p>
+                        <p>
                             {{ user.school_name }} CUNY Baruch
-                        </p><!-->
+                        </p>
 
                     </div>
                     <div class="col-lg-8 review-text">
