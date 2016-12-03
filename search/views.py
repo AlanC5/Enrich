@@ -6,6 +6,8 @@ from django.http import HttpResponseRedirect
 
 from organization.models import Organization
 from .forms import SearchForm, FilterSearchForm
+from django.db.models import Q
+
 
 def index(request):
     '''
@@ -26,7 +28,16 @@ def search_result(request):
         if form.is_valid():
             # process data and render search results
             query = form.cleaned_data['search_term']
-            results = Organization.objects.filter(description__contains=query)
+
+            categoryChoices = form.cleaned_data.get('category')
+            categorySelected = '('
+            for choice in categoryChoices:
+                categorySelected += ' Q(category=' + "\'" + choice + "\'" + ') |'
+            categorySelected = categorySelected[:-1]
+            categorySelected += ')'
+
+            results = Organization.objects.filter(Q(description__contains=query) & eval(categorySelected))
+
             # starRange and negativeStarRange to render stars
             for result in results:
                 rating = result.rating
