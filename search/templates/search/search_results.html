@@ -21,7 +21,14 @@
         <div class="col-md-5">
             <h3>{{ result.name }}</h3>
             <h4>{{ result.category }}</h4>
-            <h5>{{ result.rating }}</h5>
+            <h5>
+                {% for i in result.starRange %}
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                {% endfor %}
+                {% for i in result.negativeStarRange %}
+                    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                {% endfor %}
+            </h5>
             <p>{{ result.description }}</p>
             <a class="btn btn-primary" href="/organization/{{ result.name }}">View Organization <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
