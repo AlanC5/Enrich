@@ -28,7 +28,7 @@ def organization_page(request, name):
     lat = latlong['lat']
     lon = latlong['lng']
     return render(request, 'organization/organization.html',
-                  {'organization': organization[0], 'latitude': lat, 'longitude': lon,
+                  {'organization': organization[0], 'starRange': range(int(organization[0].rating)), 'negativeStarRange':range(5 - int(organization[0].rating)), 'latitude': lat, 'longitude': lon,
                    'reviews': reviews})
 
 def submit_form(request):

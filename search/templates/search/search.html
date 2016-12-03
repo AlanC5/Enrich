@@ -1,9 +1,46 @@
 {% extends "search/search_base.html" %}
 
 {% block content %}
-<form action="/search/search_result/" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Search"/>
-</form>
+<link rel="stylesheet" href="/static/css/search.css">
+<div class="container container-table">
+    <div class="row vertical-center-row">
+        <div class="text-center col-md-4 col-md-offset-4">
+            <form action="/search/search_result/" method="post">
+                {% csrf_token %}
+                <input class="form-control" id="id_search_term" maxlength="100" name="search_term" type="text" required="" placeholder="Search">
+                <label for="id_category_0">Category:</label>
+                <ul id="id_category">
+                    <li>
+                        <label for="id_category_0"><input id="id_category_0" name="category" type="checkbox" value="STEM"> STEM</label>
+                    </li>
+
+                    <li>
+                        <label for="id_category_1"><input id="id_category_1" name="category" type="checkbox" value="Arts/Humanities"> Arts/Humanities</label>
+                    </li>
+
+                    <li>
+                        <label for="id_category_2"><input id="id_category_2" name="category" type="checkbox" value="Academic Prep"> Academic Prep</label>
+                    </li>
+
+                    <li>
+                        <label for="id_category_3"><input id="id_category_3" name="category" type="checkbox" value="Sports"> Sports</label>
+                    </li>
+                </ul>
+
+                <label for="id_price_0">Price:</label>
+                <ul id="id_price">
+                    <li>
+                        <label for="id_price_0"><input id="id_price_0" name="price" type="checkbox" value="FREE"> FREE</label>
+                    </li>
+
+                    <li>
+                        <label for="id_price_1"><input id="id_price_1" name="price" type="checkbox" value="TUITION"> TUITION</label>
+                    </li>
+                </ul>
+
+                <button type="submit" class="btn btn-success">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock content %}
