@@ -29,7 +29,12 @@ def search_result(request):
             # process data and render search results
             query = form.cleaned_data['search_term']
 
+            # get the categoryChoices the user selected
             categoryChoices = form.cleaned_data.get('category')
+
+            # Create complex query with Q objects from category choices that the user selected
+            # Utilize complex lookups with Q objects
+            #https://docs.djangoproject.com/en/dev/topics/db/queries/#complex-lookups-with-q-objects
             categorySelected = '('
             for choice in categoryChoices:
                 categorySelected += ' Q(category=' + "\'" + choice + "\'" + ') |'
