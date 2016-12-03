@@ -22,7 +22,6 @@ class FilterSearchForm(forms.Form):
         ('Academic Prep', 'Academic Prep'),
         ('Sports', 'Sports')]
     PRICECHOICES = [
-        ('FREE', "FREE"),
         ('TUITION', 'TUITION')]
 
     search_term = forms.CharField(label="", max_length=100)
