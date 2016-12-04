@@ -14,3 +14,15 @@ Enrich is a tool for seamlessly finding enrichment programs. We understand that 
 - SCRUM Master: Alan Chen
 - Dev: Samuel Cohen
 - Dev: Anthony Shalagin
+
+
+## Deployment on Heroku:
+https://ancient-lowlands-74290.herokuapp.com/
+
+## Testing and Coverage:
+python manage.py test
+
+## Pylint:
+Please run the following line below on all of our apps.
+
+pylint --load-plugins=pylint_django ./* --rcfile .pylintrc

@@ -1,6 +1,4 @@
 '''
-Admin app privillages
+Admin app privillages for search
 '''
 from django.contrib import admin
-
-# Register your models here.
