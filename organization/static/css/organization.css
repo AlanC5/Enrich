@@ -6,6 +6,17 @@
     cursor: pointer;
 }
 
+#list_reviews {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#list_reviews .row {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
 textarea {
     resize: none;
     width: 100%;
