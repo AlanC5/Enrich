@@ -23,7 +23,12 @@ def organization_page(request, name):
     geocode_result = GMAPS.geocode(address)
     latlong = (geocode_result[0].get('geometry')).get('location')
     #print(latlong)
-    reviews = Reviews.objects.filter(organization_id=organization[0])
+    reviews = Reviews.objects.filter(organization_id=organization[0]).order_by('-date')
+
+    for review in reviews:
+        rating = review.rating
+        review.starRange = range(int(rating))
+        review.negativeStarRange = range(5 - int(rating))
 
     lat = latlong['lat']
     lon = latlong['lng']

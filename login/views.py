@@ -6,4 +6,4 @@ from django.shortcuts import render
 # Create your views here.
 def index(request):
     """Main login page"""
-    return render(request, "login/loginpage.html")
+    return render(request, "login/login_register.html")
