@@ -61,29 +61,35 @@
                     </div>
                 </div>
 
-                <!-- Place jinja2 loop statement here -->
-                {% for review in reviews %}
-                <div class="row">
-                    <div class="col-lg-4 review-person">
-                        <p>
-                            {{ review.user_id.name }}
-                        </p>
-                        <p>
-                            {{ review.user_id.school_name }}
-                        </p>
+                <div class="container">
+                    {% for review in reviews %}
+                    <div class="row">
+                        <div class="col-lg-4 review-person">
+                            <p>
+                                {{ review.user_id.name }}
+                            </p>
+                            <p>
+                                {{ review.user_id.school_name }}
+                            </p>
 
+                        </div>
+                        <div class="col-lg-8 review-text">
+                            <p>
+                                {% for i in review.starRange %}
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                {% endfor %}
+                                {% for i in review.negativeStarRange %}
+                                    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                {% endfor %}
+                                 | {{ review.date }}
+                            </p>
+                            <p>
+                                {{ review.review_text }}
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-lg-8 review-text">
-                        <p>
-                            {{ review.rating }} | {{ review.date }}
-                        </p>
-                        <p>
-                            {{ review.review_text }}
-                        </p>
-                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
-                <!-- End loop -->
             </div>
 
         </div>
