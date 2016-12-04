@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import RegistrationForm
+from django.views.generic import View
 from user.models import User
 #from django.http import HttpResponse
 
@@ -27,7 +28,18 @@ class RegistrationFormView(View):
             name = form.cleaned_data['name']
             password = form.cleaned_data['password']
             user.set_password(password)
+            #user.save()
             User.objects.create(user)
 
+            user = authenticate(email=email, password=password)
+
+            if user is not None:
+
+                if user.is_active:
+
+                    login(request, user)
+                    return redirect('search:index')
+
+        return render(request, self.template_name, {'form': form})
 
             #user_id=User.objects.get(pk=user_id),
