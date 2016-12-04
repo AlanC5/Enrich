@@ -8,11 +8,11 @@ from user.models import User
 # Create your views here.
 def index(request):
     """Main login page"""
-    return render(request, "login/loginpage.html")
+    return render(request, "login/login_register.html")
 
 class RegistrationFormView(View):
     form_class = RegistrationForm
-    template_name = 'registration/registration.html'
+    template_name = 'registration/login_register.html'
 
     #display blank form
     def get(self, request):
