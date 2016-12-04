@@ -1,0 +1,12 @@
+.form_star {
+    font-size: 22px;
+}
+
+#review_star_selection span {
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+}
