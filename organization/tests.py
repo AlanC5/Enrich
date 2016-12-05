@@ -66,7 +66,21 @@ class OrganizationTestCase(TestCase):
 
     def test_a_submission(self):
         """Submits a review"""
-        response = self.c.post("/organization/submit_form/", {'organization_id': 1, "user_id": 1, "rating": 5, "review_text": 5})
+        #first, create a user
+        User.objects.create_user(
+            username="test",
+            first_name="Testy",
+            last_name="McTestface",
+            email="test@test.test",
+            password="test")
+        self.assertTrue(User.objects.all().exists())
+
+        testy = User.objects.get(username="test")
+        self.assertEqual(testy.username,"test")
+        self.assertEqual(testy.pk, 1)
+        self.c.post("/login/login_user/", {"username": "test", "password": "test"})
+        response = self.c.post("/organization/submit_form/", {'organization_id': 1, "rating": 5,\
+                                "review_text": 5})
         self.assertTrue(response.status_code, 302)
         reviewList = Reviews.objects.all()
         self.assertTrue(reviewList.exists())
