@@ -24,7 +24,6 @@ def login_user(request):
             if user.is_active:
                 login(request, user)
                 curr_user = EnrichUser.objects.filter(user=request.user)
-                print(curr_user)
                 return render(request, 'search/search.html')
         else:
             return render(request, 'login/login_register.html', {'error_message': 'Invalid login'})
@@ -39,8 +38,13 @@ def register(request):
             email=form.cleaned_data['email'],
             password=form.cleaned_data['password'],
         )
+        if user is not None:
+            login(request, user)
+            return render(request, 'search/search.html')
         return render(request, 'search/search.html')
     context = {
         "form": form,
     }
     return render(request, 'login/login_register.html', context)
+
+#def update_profile(request, pk):
