@@ -18,6 +18,11 @@ class SearchForm(forms.Form):
         ('Sports', 'Sports')]
     category = forms.MultipleChoiceField(choices=CATEGORYCHOICES, widget=forms.CheckboxSelectMultiple(), required = False)
 
+    PRICECHOICES = [
+        ('TUITION', 'TUITION')]
+    price = forms.ChoiceField(choices=PRICECHOICES, widget=forms.RadioSelect(), required = False)
+
+
 
 class FilterSearchForm(forms.Form):
     '''
