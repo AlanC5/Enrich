@@ -2,6 +2,7 @@
 
 from __future__ import unicode_literals
 from django.db import models
+from django.contrib.auth.models import User
 
 class Organization_Staff(models.Model):
     """Organization staff model"""
@@ -23,7 +24,7 @@ class Reviews(models.Model):
     review_text = models.TextField()
     rating = models.IntegerField()
     date = models.DateTimeField()
-    user_id = models.ForeignKey('user.User', on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, default=1, on_delete=models.CASCADE)
     organization_id = models.ForeignKey('organization.Organization', on_delete=models.CASCADE)
 
     def __str__(self):
