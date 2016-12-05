@@ -24,7 +24,7 @@ class Reviews(models.Model):
     review_text = models.TextField()
     rating = models.IntegerField()
     date = models.DateTimeField()
-    user_id = models.ForeignKey(User, default=1, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     organization_id = models.ForeignKey('organization.Organization', on_delete=models.CASCADE)
 
     def __str__(self):
