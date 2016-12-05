@@ -13,16 +13,16 @@ class SearchTestCase(TestCase):
     def setUp(self):
         self.rf = RequestFactory()
         Organization.objects.create(organization_id=1,
-                                    name="a",
-                                    category="a",
-                                    description="blah",
+                                    name="b",
+                                    category="c",
+                                    description="d",
                                     free=False,
-                                    tuition=1000,
-                                    rating=2,
-                                    address="123 Elm St",
-                                    contact_number="1111",
-                                    website="www.enrich.edu",
-                                    imageURL="a")
+                                    tuition=6000,
+                                    rating=5,
+                                    address="124 Elm Ave",
+                                    contact_number="555-555-5555",
+                                    website="www.enrich.com",
+                                    imageURL="IMAGE HERE")
 
 
     def test_search_page_exists(self):
