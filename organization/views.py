@@ -42,11 +42,11 @@ def submit_form(request):
     organization_id = request.POST["organization_id"]
     rating = request.POST["rating"]
     review_text = request.POST["review_text"]
-    user = User.objects.get(pk=user_id)
+    user = User.objects.get(username=request.user.username)
     Reviews.objects.create(review_text=review_text,
                            rating=rating,
                            date=datetime.now(),
-                           user_id=User.objects.get(pk=user_id),
+                           user_id=user,
                            organization_id=Organization.objects.get(pk=organization_id))
 
     return redirect('/')
