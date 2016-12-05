@@ -21,7 +21,16 @@
             <button type="submit" class="btn btn-success">Search</button>
           </form>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+            <li>
+              {% if user.is_authenticated %}
+              <a href="/login/logout_user/"><span class="glyphicon glyphicon-user"></span> Logout</a>
+              {% endif %}
+            </li>
+            <li>
+              {% if user.is_authenticated %} {% else %}
+              <a href="/login/"><span class="glyphicon glyphicon-user"></span> Login</a>
+              {% endif %}
+            </li>
           </ul>
         </div>
       </div>

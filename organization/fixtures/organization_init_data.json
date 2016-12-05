@@ -6,7 +6,7 @@
             "name": "ACE Mentor Program",
             "description": "ACE is an after school program that introduces you to careers in architecture and engineering",
             "free": true,
-            "tuition": "0",
+            "tuition": "$0",
             "rating": 4,
             "category": "STEM",
             "address": "55 main street, New York, NY",
@@ -22,7 +22,7 @@
             "name": "All Star Code",
             "description": "All Star Code (ASC), our flagship program, is a six-week summer program for high school rising male sophomores, juniors, and seniors here in New York City. The 2015 Summer Intensive will consist of 2 cohorts of 40 students total. The curriculum includes a rigorous computer science course, but also a soft-skills curriculum (leadership, innovation, team-work, etc.) that would help our students stand out years later when they enter the talent pipeline of top companies. ASC’s purpose is to give young African-American men an early introduction to the world of technology, providing a mode of entry to an industry that has been closed to them. (To twist the old Walt Disney line: “If you can’t see it, you can’t dream it.”)",
             "free": true,
-            "tuition": "0",
+            "tuition": "$0",
             "rating": 4.5,
             "category": "STEM",
             "address": "601 W. 26th Street, Suite 325, New York, NY 10001",
@@ -38,7 +38,7 @@
             "name": "THE BELLA ABZUG LEADERSHIP INSTITUTE (BALI)",
             "description": "A free 2-week summer debate and leadership training program led by Impact Coalition, Inc. for high school students. Build leadership skills by working with accomplished female leaders in the fields of law, business, politics, government, the nonprofit sector, and academia.",
             "free": true,
-            "tuition": "0",
+            "tuition": "$0",
             "rating": 3.5,
             "category": "Arts/Humanities",
             "address": "HUNTER COLLEGE, OFFICE HE1233, 695 PARK AVE., NEW YORK, NY 10021",
@@ -54,7 +54,7 @@
             "name": "ARTS MENTORING PROGRAM @ FREE ARTS NYC",
             "description": "An arts program that includes painting, dance, drama, writing, music, sculpture, photography and other creative outlets year round",
             "free": true,
-            "tuition": "0",
+            "tuition": "$0",
             "rating": 5,
             "category": "Arts/Humanities",
             "address": "1431 Broadway, 8th Floor New York, NY 10018 United States",
@@ -70,7 +70,7 @@
             "name": "BREAKTHROUGH NEW YORK",
             "description": "Take enrichment classes, visit museums, and work with mentors on various issues including high school placement",
             "free": true,
-            "tuition": "0",
+            "tuition": "$0",
             "rating": 3,
             "category": "Arts/Humanities",
             "address": "123 William Street, 4th Floor, New York, NY 10038",
@@ -86,7 +86,7 @@
             "name": "COLLEGE NOW",
             "description": "A college prep program that matches public high schools with one or more of the 17 City University of New York (CUNY) colleges during the summer",
             "free": true,
-            "tuition": "0",
+            "tuition": "$0",
             "rating": 2,
             "category": "Academic Prep",
             "address": "16 Court Street, 3rd Floor Brooklyn, NY 11201",
@@ -102,7 +102,7 @@
             "name": "EVERYONE READING",
             "description": "After-school tutoring and summer intensive tutoring program. ",
             "free": true,
-            "tuition": "0",
+            "tuition": "$0",
             "rating": 4.5,
             "category": "Academic Prep",
             "address": "30 Broad Street, Suite 402 New York, NY 10004",
@@ -118,7 +118,7 @@
             "name": "Street Hockey",
             "description": "NYC Parks and the New York Rangers provide free youth street hockey clinics, presented by Coca-Cola, Get the Ball Rolling.  The clinics are for boys and girls ages 5-17, and provide instruction on the basics of street hockey, as well as tips on the importance of exercising and eating a balanced diet. All equipment is provided and no prior experience is necessary to participate.  Sessions run from December to February in the winter and July to August in the summer.  Registration is on a rolling basis beginning prior to the start of each session.",
             "free": true,
-            "tuition": "0",
+            "tuition": "$0",
             "rating": 4.5,
             "category": "Sports",
             "address": "232 West 60th Street Manhattan, Cross Streets: West End and Amsterdam Avenue",
@@ -159,30 +159,15 @@
             "imageURL": "http://www.pianolessonsnyc.net/wp-content/uploads/2014/10/pianolessonsnyc.net-recital-group-380x240.jpg"
         }
     },
+
     {
         "model": "organization.organization",
         "pk": 11,
         "fields": {
-            "name": "CHKA Martial Arts",
-            "description": "CHKA’s classes in Kenpo Karate equip children of all ages with physical conditioning and skills which allow them to defend themselves. Moreover, the classes teach children to have the strength of character to avoid situations. By learning mastery of ancient martial arts techniques, children gain awareness of themselves and their surroundings, concentration, self confidence, self discipline, and important physical fitness . . . and fun! Classes include Lil Turtles (ages 3-4), Lil Ninjas (ages 4-7), Junior Samurai (ages 7-11), and Teens (ages 11-15).",
-            "free": false,
-            "tuition": "$150 for 100 days",
-            "rating": 4.5,
-            "category": "Sports",
-            "address": "34 Avenue A, 2nd Floor New York, NY 10009",
-            "contact_number": "646-692-6155",
-            "website": "http://www.chka.org/",
-            "imageURL": "http://www.chka.org/wp-content/uploads/2013/03/10580018_798124923552079_2735686423289523283_n.jpg"
-        }
-    },
-    {
-        "model": "organization.organization",
-        "pk": 12,
-        "fields": {
             "name": "PENCIL",
             "description": "PENCIL is the leader in creating innovative and impactful models of ongoing collaboration between business and public schools.",
             "free": true,
-            "tuition": "free",
+            "tuition": "$0",
             "rating": 4.0,
             "category": "Career",
             "address": "30 West 26th Street, 5th Floor New York, NY 10010",
@@ -193,12 +178,12 @@
     },
     {
         "model": "organization.organization",
-        "pk": 13,
+        "pk": 12,
         "fields": {
             "name": "FIRST Robotics",
             "description": "As part of a FIRST team, kids get to apply math and science knowledge, solve problems, make decisions, communicate complex ideas, collaborate as part of a team, exercise leadership, manage resources, create and execute business plans – all essential skills in any successful technological enterprise.",
             "free": true,
-            "tuition": "free",
+            "tuition": "$0",
             "rating": 3.5,
             "category": "Academic Prep",
             "address": "101 Avenue of the Americas 18th Floor New York, NY 10013",
@@ -209,12 +194,12 @@
     },
     {
         "model": "organization.organization",
-        "pk": 14,
+        "pk": 13,
         "fields": {
             "name": "Upstairs After School Art Program",
             "description": "Upstairs at 83 Hester is a weekly children’s art program that takes a process-oriented approach to art making. The classes introduce participants to ways of seeing, sensing, thinking, and making that are explored through the arts. Together we will collaborate on projects, encounter works by contemporary artists, and learn new vocabularies. Guest artists whose work relates to our course theme will visit to co-teach lessons.",
             "free": true,
-            "tuition": "free",
+            "tuition": "$0",
             "rating": 4.0,
             "category": "Arts/Humanities",
             "address": "83A Hester Street, New York, NY, 10002",
@@ -225,12 +210,12 @@
     },
     {
         "model": "organization.organization",
-        "pk": 15,
+        "pk": 14,
         "fields": {
             "name": "BELL",
             "description": "BELL exists to transform the academic achievements, self-confidence, and life trajectories of children living in under-resourced communities.",
             "free": true,
-            "tuition": "free",
+            "tuition": "$0",
             "rating": 3.0,
             "category": "Arts/Humanities",
             "address": "1460 Broadway New York, NY 10036",
@@ -241,7 +226,7 @@
     },
     {
         "model": "organization.organization",
-        "pk": 16,
+        "pk": 15,
         "fields": {
             "name": "Columbia University Science Honors Program",
             "description": "College classes in physics, chemistry and biology during school year",
@@ -257,7 +242,7 @@
     },
     {
         "model": "organization.organization",
-        "pk": 17,
+        "pk": 16,
         "fields": {
             "name": " Baruch College STEP (Science and Technology Entry Program) Academy",
             "description": "A pre-college science enrichment program for talented middle and high school students in NYC",
@@ -273,7 +258,7 @@
     },
     {
         "model": "organization.organization",
-        "pk": 18,
+        "pk": 17,
         "fields": {
             "name": "Best Excellence in Science and Technology at NYU",
             "description": "A pre-college science enrichment program for talented middle and high school students in NYC",
@@ -289,7 +274,7 @@
     },
     {
         "model": "organization.organization",
-        "pk": 19,
+        "pk": 18,
         "fields": {
             "name": "Brooklyn Botanic Garden",
             "description": "Science classes in the spring and summer",
@@ -305,7 +290,7 @@
       },
       {
           "model": "organization.organization",
-          "pk": 20,
+          "pk": 19,
           "fields": {
             "name": "All Star Code Summer Institute",
             "description": "A 6-week Summer Institute designed to educate, inspire, and equip participants with the knowledge, skills, and resources needed to pursue paths leading to academics and/or careers in the technology and engineering sectors",
@@ -321,7 +306,7 @@
         },
         {
             "model": "organization.organization",
-            "pk": 21,
+            "pk": 20,
             "fields": {
               "name": "Breakthrough New York",
               "description": "Six-years of tutoring, classes and more to get ready for college. Runs year-round, including summers and the school year",
@@ -337,7 +322,7 @@
         },
         {
             "model": "organization.organization",
-            "pk": 22,
+            "pk": 21,
             "fields": {
               "name": "Cooper Union Research Internship",
               "description": "A summer internship focused on engineering, math, chemistry, physics, and astronomy",
@@ -353,7 +338,7 @@
         },
         {
             "model": "organization.organization",
-            "pk": 23,
+            "pk": 22,
             "fields": {
               "name": "College Now at Hunter College",
               "description": "Free classes taught by Hunter faculty to prepare high-schoolers for college work during fall and spring semesters",
@@ -369,7 +354,7 @@
         },
         {
             "model": "organization.organization",
-            "pk": 24,
+            "pk": 23,
             "fields": {
               "name": "Top Honors",
               "description": "Free math help on Saturday mornings and Tuesday evenings during the school year",
@@ -381,6 +366,38 @@
               "contact_number": "info@tophonors.org",
               "website": "http://www.tophonors.org",
               "imageURL": "https://static1.squarespace.com/static/529d28e3e4b0690cc411294f/529e19f6e4b065d1f24f13e9/529e7c71e4b0b7aa2efa6616/1386118259125/home17.jpg?format=1000w"
+            }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 24,
+            "fields": {
+              "name": "CAT Youth Program",
+              "description": "CAT Youth Theatre is a free, award-winning after school program that helps young people to thrive– on stage and in life.",
+              "free": true,
+              "tuition": "$0",
+              "rating": 4,
+              "category": "Arts/Humanities",
+              "address": "101 W 31st St, New York, NY 10001",
+              "contact_number": "Maureen.Donohue@cuny.edu",
+              "website": "http://www.creativeartsteam.org/programs/cat-youth-theatre",
+              "imageURL": "https://pbs.twimg.com/profile_images/652140627501690881/ZX9dQjhT.png"
+            }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 25,
+            "fields": {
+              "name": "Harlem RBI Program",
+              "description": "Harlem RBI provides inner-city youth with opportunities to Play, Learn and Grow. We use the power of teams to Coach, Teach and Inspire youth to recognize their potential and realize their dreams.",
+              "free": true,
+              "tuition": "$0",
+              "rating": 3.5,
+              "category": "Sports",
+              "address": "333 E 100th St, New York, NY 10029",
+              "contact_number": "jpadilla@harlemrbi.org",
+              "website": "http://www.harlemrbi.org/",
+              "imageURL": "http://www.bronx.com/thumbnail.php?file=Harlem_RBI_544281797.png&size=article_medium"
             }
         }
 ]
