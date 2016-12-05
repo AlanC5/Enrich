@@ -25,7 +25,7 @@ def login_user(request):
                 login(request, user)
                 curr_user = EnrichUser.objects.filter(user=request.user)
                 print(curr_user)
-                return render(request, 'search/search.html', {'user': curr_user})
+                return render(request, 'search/search.html')
         else:
             return render(request, 'login/login_register.html', {'error_message': 'Invalid login'})
     return render(request, 'login/login_register.html')
