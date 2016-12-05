@@ -159,25 +159,10 @@
             "imageURL": "http://www.pianolessonsnyc.net/wp-content/uploads/2014/10/pianolessonsnyc.net-recital-group-380x240.jpg"
         }
     },
+
     {
         "model": "organization.organization",
         "pk": 11,
-        "fields": {
-            "name": "CHKA Martial Arts",
-            "description": "CHKA’s classes in Kenpo Karate equip children of all ages with physical conditioning and skills which allow them to defend themselves. Moreover, the classes teach children to have the strength of character to avoid situations. By learning mastery of ancient martial arts techniques, children gain awareness of themselves and their surroundings, concentration, self confidence, self discipline, and important physical fitness . . . and fun! Classes include Lil Turtles (ages 3-4), Lil Ninjas (ages 4-7), Junior Samurai (ages 7-11), and Teens (ages 11-15).",
-            "free": false,
-            "tuition": "$150 for 100 days",
-            "rating": 4.5,
-            "category": "Sports",
-            "address": "34 Avenue A, 2nd Floor New York, NY 10009",
-            "contact_number": "646-692-6155",
-            "website": "http://www.chka.org/",
-            "imageURL": "http://www.chka.org/wp-content/uploads/2013/03/10580018_798124923552079_2735686423289523283_n.jpg"
-        }
-    },
-    {
-        "model": "organization.organization",
-        "pk": 12,
         "fields": {
             "name": "PENCIL",
             "description": "PENCIL is the leader in creating innovative and impactful models of ongoing collaboration between business and public schools.",
@@ -193,7 +178,7 @@
     },
     {
         "model": "organization.organization",
-        "pk": 13,
+        "pk": 12,
         "fields": {
             "name": "FIRST Robotics",
             "description": "As part of a FIRST team, kids get to apply math and science knowledge, solve problems, make decisions, communicate complex ideas, collaborate as part of a team, exercise leadership, manage resources, create and execute business plans – all essential skills in any successful technological enterprise.",
@@ -209,7 +194,7 @@
     },
     {
         "model": "organization.organization",
-        "pk": 14,
+        "pk": 13,
         "fields": {
             "name": "Upstairs After School Art Program",
             "description": "Upstairs at 83 Hester is a weekly children’s art program that takes a process-oriented approach to art making. The classes introduce participants to ways of seeing, sensing, thinking, and making that are explored through the arts. Together we will collaborate on projects, encounter works by contemporary artists, and learn new vocabularies. Guest artists whose work relates to our course theme will visit to co-teach lessons.",
@@ -225,7 +210,7 @@
     },
     {
         "model": "organization.organization",
-        "pk": 15,
+        "pk": 14,
         "fields": {
             "name": "BELL",
             "description": "BELL exists to transform the academic achievements, self-confidence, and life trajectories of children living in under-resourced communities.",
@@ -241,7 +226,7 @@
     },
     {
         "model": "organization.organization",
-        "pk": 16,
+        "pk": 15,
         "fields": {
             "name": "Columbia University Science Honors Program",
             "description": "College classes in physics, chemistry and biology during school year",
@@ -257,7 +242,7 @@
     },
     {
         "model": "organization.organization",
-        "pk": 17,
+        "pk": 16,
         "fields": {
             "name": " Baruch College STEP (Science and Technology Entry Program) Academy",
             "description": "A pre-college science enrichment program for talented middle and high school students in NYC",
@@ -273,7 +258,7 @@
     },
     {
         "model": "organization.organization",
-        "pk": 18,
+        "pk": 17,
         "fields": {
             "name": "Best Excellence in Science and Technology at NYU",
             "description": "A pre-college science enrichment program for talented middle and high school students in NYC",
@@ -289,7 +274,7 @@
     },
     {
         "model": "organization.organization",
-        "pk": 19,
+        "pk": 18,
         "fields": {
             "name": "Brooklyn Botanic Garden",
             "description": "Science classes in the spring and summer",
@@ -305,7 +290,7 @@
       },
       {
           "model": "organization.organization",
-          "pk": 20,
+          "pk": 19,
           "fields": {
             "name": "All Star Code Summer Institute",
             "description": "A 6-week Summer Institute designed to educate, inspire, and equip participants with the knowledge, skills, and resources needed to pursue paths leading to academics and/or careers in the technology and engineering sectors",
@@ -321,7 +306,7 @@
         },
         {
             "model": "organization.organization",
-            "pk": 21,
+            "pk": 20,
             "fields": {
               "name": "Breakthrough New York",
               "description": "Six-years of tutoring, classes and more to get ready for college. Runs year-round, including summers and the school year",
@@ -337,7 +322,7 @@
         },
         {
             "model": "organization.organization",
-            "pk": 22,
+            "pk": 21,
             "fields": {
               "name": "Cooper Union Research Internship",
               "description": "A summer internship focused on engineering, math, chemistry, physics, and astronomy",
@@ -353,7 +338,7 @@
         },
         {
             "model": "organization.organization",
-            "pk": 23,
+            "pk": 22,
             "fields": {
               "name": "College Now at Hunter College",
               "description": "Free classes taught by Hunter faculty to prepare high-schoolers for college work during fall and spring semesters",
@@ -369,7 +354,7 @@
         },
         {
             "model": "organization.organization",
-            "pk": 24,
+            "pk": 23,
             "fields": {
               "name": "Top Honors",
               "description": "Free math help on Saturday mornings and Tuesday evenings during the school year",
