@@ -1,6 +1,7 @@
 """Tests the organization app"""
 from django.test import TestCase, Client
 from Enrich.models import Reviews
+from django.contrib.auth.models import User
 from .models import Organization
 from .views import organization_page, submit_form
 
