@@ -48,33 +48,3 @@ def register(request):
         "form": form,
     }
     return render(request, 'login/login_register.html', context)
-
-def update_profile(request, pk):
-    user = User.objects.get(pk=pk)
-
-    profileform = RegistrationForm(instance=user)
-
-    inlineform = inlineformset_factory(User,
-                                        EnrichUser,
-                                        fields=('school_name',))
-
-    newform = inlineform(instance=user)
-
-    if request.user.is_authenticated() and request.user.id == user.id:
-        if request.method == "POST":
-            profileform = RegistrationForm(request.POST, instance=user)
-            newform = inlineform(request.POST, instance=user)
-            if profileform.is_valid():
-                curr_user = profileform.save(commit=False)
-                newform = inlineform(request.POST, instance=curr_user)
-                if newform.is_valid():
-                    curr_user.save()
-                    newform.save()
-                    return ('search/search.html')
-        return render(Request, "login/profile.html", {
-            "pk": pk,
-            "form": profileform,
-            "newform": newform
-        })
-    else:
-        raise PermissionDenied
