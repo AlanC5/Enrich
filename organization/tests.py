@@ -48,13 +48,22 @@ class OrganizationTestCase(TestCase):
         entry.delete()
         entry = Organization.objects.all()
         self.assertTrue(len(entry) == 1)
-
+    def test_index(self):
+        """tests the index"""
+        res = self.c.get("/")
+        self.assertTrue(res.status_code, 200)
     def test_organization_page(self):
         """Tests the organization page"""
         response = self.c.get("/a /")
         self.assertTrue(response.status_code, 200)
 
     def test_submit_form(self):
+        """Tests the submit form"""
         response = self.c.get("/submit_form")
         self.assertTrue(response.status_code, 302)
 
+    def test_a_submission(self):
+        """Submits a review"""
+        response = self.c.post("/submit_form", {'organization_id': 1, "user_id": 1, "rating": 5, "review_text": 5})
+        self.assertTrue(response.status_code, 302)
+        response = self.c.get("/a/")
