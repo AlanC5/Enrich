@@ -42,7 +42,7 @@ def submit_form(request):
     organization_id = request.POST["organization_id"]
     rating = request.POST["rating"]
     review_text = request.POST["review_text"]
-
+    user = User.objects.get(pk=user_id)
     Reviews.objects.create(review_text=review_text,
                            rating=rating,
                            date=datetime.now(),
