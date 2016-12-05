@@ -1,3 +1,5 @@
+"""Runs the Django server"""
+
 #!/usr/bin/env python
 import os
 import sys
