@@ -6,6 +6,8 @@ from django.http import HttpResponseRedirect
 
 from organization.models import Organization
 from .forms import SearchForm, FilterSearchForm
+from django.db.models import Q
+
 
 def index(request):
     '''
@@ -24,9 +26,26 @@ def search_result(request):
         form = SearchForm(request.POST)
 
         if form.is_valid():
-            # process data and render search results
+
+            # get the categoryChoices the user selected
+            categoryChoices = form.cleaned_data.get('category')
+
+            #process data and render search results
             query = form.cleaned_data['search_term']
-            results = Organization.objects.filter(description__contains=query)
+
+            # Create complex query with Q objects from category choices that the user selected
+            # Utilize complex lookups with Q objects
+            # https://docs.djangoproject.com/en/dev/topics/db/queries/#complex-lookups-with-q-objects
+            if (len(categoryChoices) > 0):
+                categorySelected = '('
+                for choice in categoryChoices:
+                    categorySelected += ' Q(category=' + "\'" + choice + "\'" + ') |'
+                categorySelected = categorySelected[:-1]
+                categorySelected += ')'
+                results = Organization.objects.filter(Q(description__contains=query) & eval(categorySelected))
+            else:
+                results = Organization.objects.filter(description__contains=query)
+
             # starRange and negativeStarRange to render stars
             for result in results:
                 rating = result.rating

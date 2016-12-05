@@ -8,7 +8,15 @@ class SearchForm(forms.Form):
     Defining the input fields for Search Navbar
     Defined Here, but not templated for HTML and Stlying Reasons
     '''
+
     search_term = forms.CharField(label="", max_length=100)
+
+    CATEGORYCHOICES = [
+        ('STEM', 'STEM'),
+        ('Arts/Humanities', 'Arts/Humanities'),
+        ('Academic Prep', 'Academic Prep'),
+        ('Sports', 'Sports')]
+    category = forms.MultipleChoiceField(choices=CATEGORYCHOICES, widget=forms.CheckboxSelectMultiple(), required = False)
 
 
 class FilterSearchForm(forms.Form):
