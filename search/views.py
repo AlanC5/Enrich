@@ -29,6 +29,8 @@ def search_result(request):
 
             # get the categoryChoices the user selected
             categoryChoices = form.cleaned_data.get('category')
+            priceChoice = form.cleaned_data.get('price')
+            print(len(priceChoice))
 
             #process data and render search results
             query = form.cleaned_data['search_term']
@@ -42,9 +44,15 @@ def search_result(request):
                     categorySelected += ' Q(category=' + "\'" + choice + "\'" + ') |'
                 categorySelected = categorySelected[:-1]
                 categorySelected += ')'
-                results = Organization.objects.filter(Q(description__contains=query) & eval(categorySelected))
+                if (len(priceChoice) != 0): #Check if program if free
+                    results = Organization.objects.filter(Q(description__contains=query, tuition='$0') & eval(categorySelected))
+                else:
+                    results = Organization.objects.filter(Q(description__contains=query) & eval(categorySelected))
             else:
-                results = Organization.objects.filter(description__contains=query)
+                if (len(priceChoice) != 0): #Check if program if free
+                    results = Organization.objects.filter(description__contains=query, tuition='$0')
+                else:
+                    results = Organization.objects.filter(description__contains=query)
 
             # starRange and negativeStarRange to render stars
             for result in results:
