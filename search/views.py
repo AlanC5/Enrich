@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
 from organization.models import Organization
+from user.models import EnrichUser
 from .forms import SearchForm, FilterSearchForm
 
 def index(request):
@@ -13,7 +14,15 @@ def index(request):
     '''
     form = SearchForm()
     filterform = FilterSearchForm()
+    user = request.user
+    print(user)
     return render(request, 'search/search.html', {'form' : form, 'filterForm' : filterform})
+    #if not request.user.is_authenticated():
+    #    return render(request, 'search/search.html', {'form' : form, 'filterForm' : filterform})
+    #else:
+    #    print("user is logged in")
+    #    user = EnrichUser.objects.filter(user=request.user)
+    #    return render(request, 'search/search.html', {'form' : form, 'filterForm' : filterform})
 
 def search_result(request):
     '''
