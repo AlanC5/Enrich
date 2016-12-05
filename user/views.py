@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 
-def index():#request):
+def index(request):#request):
     """User index"""
     all_users = User.objects.all()
     html = ''
