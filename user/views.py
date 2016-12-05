@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import User
 
-def index(request):
+def index():#request):
     """User index"""
     all_users = User.objects.all()
     html = ''
@@ -14,7 +14,7 @@ def index(request):
         html += '<a href="' + url + '"> ' + user.name + '</a><br>'
     return HttpResponse(html)
 
-def hey(request):
+def hey():#request):
     """Test code returning Hey"""
     return HttpResponse("<h2>heyyyy</h2>")
 
