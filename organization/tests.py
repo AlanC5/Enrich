@@ -50,10 +50,11 @@ class OrganizationTestCase(TestCase):
         self.assertTrue(len(entry) == 1)
 
     def test_organization_page(self):
-        response = self.c.get("/a")
+        """Tests the organization page"""
+        response = self.c.get("/a /")
         self.assertTrue(response.status_code, 200)
+
     def test_submit_form(self):
         response = self.c.get("/submit_form")
         self.assertTrue(response.status_code, 302)
-
 
