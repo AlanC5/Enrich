@@ -1,8 +1,8 @@
-from user.models import User
+from django.contrib.auth.models import User
 from django import forms
 
 class RegistrationForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['email', 'name', 'school_name', 'password']
+        fields = ['email', 'username', 'password']
