@@ -1,5 +1,6 @@
 """Tests the organization app"""
 from django.test import TestCase, Client
+from Enrich.models import Reviews
 from .models import Organization
 from .views import organization_page, submit_form
 
@@ -64,6 +65,8 @@ class OrganizationTestCase(TestCase):
 
     def test_a_submission(self):
         """Submits a review"""
-        response = self.c.post("/submit_form", {'organization_id': 1, "user_id": 1, "rating": 5, "review_text": 5})
+        response = self.c.post("/organization/submit_form/", {'organization_id': 1, "user_id": 1, "rating": 5, "review_text": 5})
         self.assertTrue(response.status_code, 302)
+        reviewList = Reviews.objects.all()
+        self.assertTrue(reviewList.exists())
         response = self.c.get("/a/")
