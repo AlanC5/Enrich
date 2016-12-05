@@ -6,6 +6,7 @@ from django.http import HttpResponse
 from .models import User
 
 def index(request):
+    """User index"""
     all_users = User.objects.all()
     html = ''
     for user in all_users:
@@ -14,7 +15,9 @@ def index(request):
     return HttpResponse(html)
 
 def hey(request):
+    """Test code returning Hey"""
     return HttpResponse("<h2>heyyyy</h2>")
 
 def getUser(request):
+    """Gets all users"""
     return render(request, 'user/theUsers.html', {'users': ['greg', 'bob']})
