@@ -3,7 +3,7 @@ from datetime import datetime
 from django.shortcuts import render, redirect
 import googlemaps
 from Enrich.models import Reviews
-from user.models import User
+from django.contrib.auth.models import User
 from .models import Organization
 
 

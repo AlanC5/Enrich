@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.db.models import Q
 from organization.models import Organization
-
+from user.models import EnrichUser
 from .forms import SearchForm, FilterSearchForm
 
 def index(request):
@@ -14,7 +14,9 @@ def index(request):
     '''
     form = SearchForm()
     filterform = FilterSearchForm()
+    user = request.user
     return render(request, 'search/search.html', {'form' : form, 'filterForm' : filterform})
+
 
 def search_result(request):
     '''

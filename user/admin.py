@@ -2,6 +2,6 @@
 Admin app privillages to allow for the adding of users
 '''
 from django.contrib import admin
-from user.models import User
+from user import models
 
-admin.site.register(User)
+admin.site.register(models.EnrichUser)
