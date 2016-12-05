@@ -16,7 +16,7 @@ class SearchForm(forms.Form):
         ('Arts/Humanities', 'Arts/Humanities'),
         ('Academic Prep', 'Academic Prep'),
         ('Sports', 'Sports')]
-    category = forms.MultipleChoiceField(choices=CATEGORYCHOICES, widget=forms.CheckboxSelectMultiple())
+    category = forms.MultipleChoiceField(choices=CATEGORYCHOICES, widget=forms.CheckboxSelectMultiple(), required = False)
 
 
 class FilterSearchForm(forms.Form):
