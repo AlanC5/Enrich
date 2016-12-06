@@ -1,15 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-#from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from .forms import RegistrationForm
 from django.views.generic import View
 from user.models import EnrichUser
 from django.contrib.auth.models import User
 from django.forms.models import inlineformset_factory
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
-from django.http import HttpResponseRedirect
+from .forms import RegistrationForm
+
 # Create your views here.
 
 def logout_user(request):
