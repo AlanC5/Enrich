@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 from django.forms.models import inlineformset_factory
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
-
+from django.http import HttpResponseRedirect
 # Create your views here.
 
 def logout_user(request):
@@ -26,7 +26,7 @@ def login_user(request):
             if user.is_active:
                 login(request, user)
                 curr_user = EnrichUser.objects.filter(user=request.user)
-                return render(request, 'search/search.html')
+                return redirect('/')
         else:
             return render(request, 'login/login_register.html', {'error_message': 'Invalid login'})
     return render(request, 'login/login_register.html')
@@ -44,8 +44,8 @@ def register(request):
         )
         if user is not None:
             login(request, user)
-            return render(request, 'search/search.html')
-        return render(request, 'search/search.html')
+            return redirect('/')
+        return redirect('/')
     context = {
         "form": form,
     }
