@@ -10,10 +10,10 @@
             </h1>
             <div class="row">
                 <div class="col-lg-6">
-                    <div id="map-canvas" style ="width: 200 px; height: 300px"></div>
-                    <p>Location: {{ organization.address }}</p>
-                    <p>Contact: {{ organization.contact_number }}</p>
-                    <p>Website: {{ organization.website }}</p>
+                    <div id="map-canvas" style ="height: 250px"></div>
+                    <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>: {{ organization.address }}</p>
+                    <p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>: {{ organization.contact_number }}</p>
+                    <p><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>: {{ organization.website }}</p>
                 </div>
                 <div class="col-lg-6">
                     <h3>
