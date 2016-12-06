@@ -24,7 +24,7 @@ def organization_page(request, name):
     latlong = (geocode_result[0].get('geometry')).get('location')
     #print(latlong)
     reviews = Reviews.objects.filter(organization_id=organization[0]).order_by('-date')
-
+    print(latlong)
     for review in reviews:
         rating = review.rating
         review.starRange = range(int(rating))

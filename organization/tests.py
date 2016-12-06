@@ -1,9 +1,9 @@
 """Tests the organization app"""
-from django.test import TestCase, Client
+from django.test import TestCase, Client, RequestFactory
 from Enrich.models import Reviews
 from django.contrib.auth.models import User
 from .models import Organization
-from .views import organization_page, submit_form
+from .views import organization_page, submit_form, index
 
 # Create your tests here.
 
@@ -12,6 +12,7 @@ class OrganizationTestCase(TestCase):
     def setUp(self):
         """Sets up test db"""
         self.c = Client()
+        self.rf = RequestFactory()
         Organization.objects.create(organization_id=1,
                                     name="a",
                                     category="a",
@@ -52,7 +53,8 @@ class OrganizationTestCase(TestCase):
         self.assertTrue(len(entry) == 1)
     def test_index(self):
         """tests the index"""
-        res = self.c.get("/")
+        req = self.rf.get("/")
+        res = index(req)
         self.assertTrue(res.status_code, 200)
     def test_organization_page(self):
         """Tests the organization page"""
@@ -63,6 +65,18 @@ class OrganizationTestCase(TestCase):
         """Tests the submit form"""
         response = self.c.get("/submit_form")
         self.assertTrue(response.status_code, 302)
+
+    def test_organization_page(self):
+        """Tests the organization page"""
+        req = self.rf.get("/organization/a")
+        name = "a"
+        response = organization_page(req, name)
+        self.assertEqual(response.status_code, 200)
+
+        #looking for some known features of our org pages
+        self.assertTrue("blah" in str(response.content))
+        self.assertTrue("Location" in str(response.content))
+        self.assertTrue("Reviews" in str(response.content))
 
     def test_a_submission(self):
         """Submits a review"""
@@ -84,4 +98,5 @@ class OrganizationTestCase(TestCase):
         self.assertTrue(response.status_code, 302)
         reviewList = Reviews.objects.all()
         self.assertTrue(reviewList.exists())
-        response = self.c.get("/a/")
+        req = self.rf.get("/organization/a/")
+        response = organization_page(req, "a")
