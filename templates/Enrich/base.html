@@ -16,7 +16,7 @@
           <form class="navbar-form navbar-left" action="/search/search_result/" method="POST">
             <div class="form-group">
                 {% csrf_token %}
-                <input class="form-control" id="id_search_term" maxlength="100" name="search_term" type="text" required="" placeholder="Search">
+                <input class="form-control" id="id_search_term" maxlength="100" name="search_term" type="text" required pattern=".*\S+.*" title="This field is required" placeholder="Search">
             </div>
             <button type="submit" class="btn btn-success">Search</button>
           </form>
@@ -34,6 +34,9 @@
             {% if user.is_authenticated %} {% else %}
             <li>
               <a href="/login/"><span class="glyphicon glyphicon-user"></span> Login</a>
+            </li>
+            <li>
+              <a href="/login/register/"><span class="glyphicon glyphicon-user"></span> Register</a>
             </li>
             {% endif %}
           </ul>

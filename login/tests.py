@@ -12,7 +12,13 @@ class LoginTestCase(TestCase):
         """Makes sure the login page index returns a 200 OK"""
         response = self.c.get("/login/")
         self.assertEqual(response.status_code, 200)
+
     def test_logout_Page_exists(self):
         """Tests logout page"""
         response = self.c.get("/login/logout_user")
         self.assertEqual(response.status_code, 301)
+
+    def test_register_page_exists(self):
+        """Makes sure the register page index returns a 200 OK"""
+        response = self.c.get("/login/#")
+        self.assertEqual(response.status_code, 200)

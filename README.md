@@ -1,6 +1,3 @@
-# Enrich
-
-
 # Enrich #
 
 ## Purpose ##
