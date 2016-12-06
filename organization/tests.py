@@ -30,6 +30,7 @@ class OrganizationTestCase(TestCase):
         entry = Organization.objects.get(organization_id=1)
 
         self.assertTrue(entry.name == "a")
+        self.assertEqual(str(entry), "1, a, blah, False, 1000, 2.0, a, 123 Elm St")
 
     def test_removing_from_db(self):
         """Tests if I can add and remove to/from db"""
