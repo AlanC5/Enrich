@@ -6,18 +6,20 @@ from django.db import models
 from django.db.models.signals import post_save
 
 class EnrichUser(models.Model):
-    user = models.OneToOneField(User, primary_key = True, related_name='enrichuser', default=1)
-    school_name = models.CharField(max_length = 100, null=True)
+    """The model for our Users"""
+    user = models.OneToOneField(User, primary_key=True, related_name='enrichuser', default=1)
+    school_name = models.CharField(max_length=100, null=True)
 
     def __str__(self):
         return self.user.username
 
-def create_enrich_user(sender, **kwargs):
-    user = kwargs["instance"]
-    if kwargs["created"]:
-        enrich_user = EnrichUser(user=user)
-        enrich_user.save()
-post_save.connect(create_enrich_user, sender=User)
+#def create_enrich_user(sender, **kwargs):
+#    """A helper function that creates a user"""
+#    user = kwargs["instance"]
+#    if kwargs["created"]:
+#        enrich_user = EnrichUser(user=user)
+#        enrich_user.save()
+#post_save.connect(create_enrich_user, sender=User)
 
 
 #def create_enrich_user(request):
