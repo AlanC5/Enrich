@@ -25,3 +25,6 @@ class Organization(models.Model):
         return str(self.organization_id) + ', ' + self.name + ', ' + self.description + ', ' +\
         str(self.free) + ', ' + self.tuition + ', ' + str(self.rating) + ', ' +\
         self.category + ', ' + self.address
+
+    def get_absolute_url(self):
+        return "/organization/%s/" % self.name

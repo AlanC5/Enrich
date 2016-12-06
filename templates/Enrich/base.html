@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <meta charset="utf-8">
-    <title>{{Title}}</title>
+    <title>Enrich</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/base.css">
 </head>
@@ -21,16 +21,21 @@
             <button type="submit" class="btn btn-success">Search</button>
           </form>
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              {% if user.is_authenticated %}
-              <a href="/login/logout_user/"><span class="glyphicon glyphicon-user"></span> {{user.username}} </a>
-              {% endif %}
+            {% if user.is_authenticated %}
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{user.username}}
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/login/logout_user/">Logout</a></li>
+                </ul>
             </li>
+            {% endif %}
+
+            {% if user.is_authenticated %} {% else %}
             <li>
-              {% if user.is_authenticated %} {% else %}
               <a href="/login/"><span class="glyphicon glyphicon-user"></span> Login</a>
-              {% endif %}
             </li>
+            {% endif %}
           </ul>
         </div>
       </div>
