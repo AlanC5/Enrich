@@ -1,7 +1,7 @@
 """Tests the organization app"""
 from django.test import TestCase, Client, RequestFactory
-from Enrich.models import Reviews
 from django.contrib.auth.models import User
+from Enrich.models import Reviews
 from .models import Organization
 from .views import organization_page, submit_form, index
 
@@ -67,7 +67,7 @@ class OrganizationTestCase(TestCase):
         response = self.c.get("/submit_form")
         self.assertTrue(response.status_code, 302)
 
-    def test_organization_page(self):
+    def test_organization_page_functions(self):
         """Tests the organization page"""
         req = self.rf.get("/organization/a")
         name = "a"
@@ -91,7 +91,7 @@ class OrganizationTestCase(TestCase):
         self.assertTrue(User.objects.all().exists())
 
         testy = User.objects.get(username="test")
-        self.assertEqual(testy.username,"test")
+        self.assertEqual(testy.username, "test")
         self.assertEqual(testy.pk, 1)
         self.c.post("/login/login_user/", {"username": "test", "password": "test"})
         response = self.c.post("/organization/submit_form/", {'organization_id': 1, "rating": 5,\

@@ -1,11 +1,11 @@
 """Organization views"""
 from datetime import datetime
-from django.shortcuts import render, redirect
-import googlemaps
 from Enrich.models import Reviews
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .models import Organization
+import googlemaps
 
+from .models import Organization
 
 GMAPS = googlemaps.Client(key='AIzaSyDaRcVBVfVT8bTlZ5DUCir9qlT_EVYyWIM')
 
@@ -24,7 +24,7 @@ def organization_page(request, name):
     latlong = (geocode_result[0].get('geometry')).get('location')
     #print(latlong)
     reviews = Reviews.objects.filter(organization_id=organization[0]).order_by('-date')
-    print(latlong)
+
     for review in reviews:
         rating = review.rating
         review.starRange = range(int(rating))
