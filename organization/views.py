@@ -53,5 +53,5 @@ def submit_form(request):
                             organization_id=Organization.objects.get(pk=organization_id))
 
         return redirect('/')
-    messages.add_message(request, messages.INFO, 'Create an account to write Reviews')
+    messages.add_message(request, messages.INFO, 'Login to write Reviews')
     return redirect('/login')
