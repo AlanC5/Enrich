@@ -1,7 +1,9 @@
 """Tests the organization app"""
-from django.test import TestCase, Client
+from django.test import TestCase, Client, RequestFactory
+from Enrich.models import Reviews
+from django.contrib.auth.models import User
 from .models import Organization
-from .views import organization_page, submit_form
+from .views import organization_page, submit_form, index
 
 # Create your tests here.
 
@@ -10,6 +12,7 @@ class OrganizationTestCase(TestCase):
     def setUp(self):
         """Sets up test db"""
         self.c = Client()
+        self.rf = RequestFactory()
         Organization.objects.create(organization_id=1,
                                     name="a",
                                     category="a",
@@ -27,6 +30,7 @@ class OrganizationTestCase(TestCase):
         entry = Organization.objects.get(organization_id=1)
 
         self.assertTrue(entry.name == "a")
+        self.assertEqual(str(entry), "1, a, blah, False, 1000, 2.0, a, 123 Elm St")
 
     def test_removing_from_db(self):
         """Tests if I can add and remove to/from db"""
@@ -50,7 +54,8 @@ class OrganizationTestCase(TestCase):
         self.assertTrue(len(entry) == 1)
     def test_index(self):
         """tests the index"""
-        res = self.c.get("/")
+        req = self.rf.get("/")
+        res = index(req)
         self.assertTrue(res.status_code, 200)
     def test_organization_page(self):
         """Tests the organization page"""
@@ -62,8 +67,37 @@ class OrganizationTestCase(TestCase):
         response = self.c.get("/submit_form")
         self.assertTrue(response.status_code, 302)
 
+    def test_organization_page(self):
+        """Tests the organization page"""
+        req = self.rf.get("/organization/a")
+        name = "a"
+        response = organization_page(req, name)
+        self.assertEqual(response.status_code, 200)
+
+        #looking for some known features of our org pages
+        self.assertTrue("blah" in str(response.content))
+        self.assertTrue("Location" in str(response.content))
+        self.assertTrue("Reviews" in str(response.content))
+
     def test_a_submission(self):
         """Submits a review"""
-        response = self.c.post("/submit_form", {'organization_id': 1, "user_id": 1, "rating": 5, "review_text": 5})
+        #first, create a user
+        User.objects.create_user(
+            username="test",
+            first_name="Testy",
+            last_name="McTestface",
+            email="test@test.test",
+            password="test")
+        self.assertTrue(User.objects.all().exists())
+
+        testy = User.objects.get(username="test")
+        self.assertEqual(testy.username,"test")
+        self.assertEqual(testy.pk, 1)
+        self.c.post("/login/login_user/", {"username": "test", "password": "test"})
+        response = self.c.post("/organization/submit_form/", {'organization_id': 1, "rating": 5,\
+                                "review_text": 5})
         self.assertTrue(response.status_code, 302)
-        response = self.c.get("/a/")
+        reviewList = Reviews.objects.all()
+        self.assertTrue(reviewList.exists())
+        req = self.rf.get("/organization/a/")
+        response = organization_page(req, "a")

@@ -16,6 +16,15 @@ Enrich is a tool for seamlessly finding enrichment programs. We understand that 
 - Dev: Anthony Shalagin
 
 
+## Developer Guide 
+Do this before running tests, coverage, or pylint.
+
+git clone git@bitbucket.org:AlanCTW/enrich.git
+
+pip install -r requirements.txt 
+
+python manage.py runserver
+
 ## Deployment on Heroku:
 https://ancient-lowlands-74290.herokuapp.com/
 

@@ -24,7 +24,7 @@ def organization_page(request, name):
     latlong = (geocode_result[0].get('geometry')).get('location')
     #print(latlong)
     reviews = Reviews.objects.filter(organization_id=organization[0]).order_by('-date')
-
+    print(latlong)
     for review in reviews:
         rating = review.rating
         review.starRange = range(int(rating))
@@ -38,7 +38,7 @@ def organization_page(request, name):
 
 def submit_form(request):
     """Handles our review submitting form."""
-    user_id = request.POST["user_id"]
+    #user_id = request.POST["user_id"]
     organization_id = request.POST["organization_id"]
     rating = request.POST["rating"]
     review_text = request.POST["review_text"]
