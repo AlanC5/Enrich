@@ -73,10 +73,9 @@ class OrganizationTestCase(TestCase):
 
         entry = Organization.objects.get(organization_id=2)
         self.assertTrue(entry)
-
         entry.delete()
         entry = Organization.objects.all()
-        self.assertTrue(len(entry) == 1)
+        self.assertEqual(len(entry), 2)
     def test_index(self):
         """tests the index"""
         req = self.rf.get("/")
