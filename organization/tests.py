@@ -60,7 +60,8 @@ class OrganizationTestCase(TestCase):
     def test_removing_from_db(self):
         """Tests if I can add and remove to/from db"""
 
-        Organization.objects.create(name="b",
+        Organization.objects.create(organization_id="10",
+                                    name="b",
                                     category="a",
                                     description="blah",
                                     free=False,
@@ -71,8 +72,9 @@ class OrganizationTestCase(TestCase):
                                     website="www.enrich.edu",
                                     imageURL="a")
 
-        entry = Organization.objects.get(organization_id=2)
+        entry = Organization.objects.get(organization_id=10)
         self.assertTrue(entry)
+        self.assertEqual(entry.get_absolute_url(), "/organization/b/")
         entry.delete()
         entry = Organization.objects.all()
         self.assertEqual(len(entry), 2)
@@ -101,6 +103,9 @@ class OrganizationTestCase(TestCase):
         #looking for some known features of our org pages
         self.assertTrue("blah" in str(response.content))
         self.assertTrue("Reviews" in str(response.content))
+    def test_absolute_url(self):
+        """Verifies that the absolute URL function works"""
+        self.assertEqual("/organization/%s/" % self.org1.name, self.org1.get_absolute_url())
 
     def test_a_submission(self):
         """Submits a review"""
