@@ -1,11 +1,13 @@
 """Organization views"""
 from datetime import datetime
-from Enrich.models import Reviews
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
 import googlemaps
-
+from Enrich.models import Reviews
+from django.http import HttpResponseRedirect
+from django.contrib import messages
+from django.contrib.auth.models import User
 from .models import Organization
+
 
 GMAPS = googlemaps.Client(key='AIzaSyDaRcVBVfVT8bTlZ5DUCir9qlT_EVYyWIM')
 
@@ -24,7 +26,7 @@ def organization_page(request, name):
     latlong = (geocode_result[0].get('geometry')).get('location')
     #print(latlong)
     reviews = Reviews.objects.filter(organization_id=organization[0]).order_by('-date')
-
+    print(latlong)
     for review in reviews:
         rating = review.rating
         review.starRange = range(int(rating))
@@ -39,14 +41,18 @@ def organization_page(request, name):
 def submit_form(request):
     """Handles our review submitting form."""
     #user_id = request.POST["user_id"]
-    organization_id = request.POST["organization_id"]
-    rating = request.POST["rating"]
-    review_text = request.POST["review_text"]
-    user = User.objects.get(username=request.user.username)
-    Reviews.objects.create(review_text=review_text,
-                           rating=rating,
-                           date=datetime.now(),
-                           user_id=user,
-                           organization_id=Organization.objects.get(pk=organization_id))
+    if request.user.username:
+        organization_id = request.POST["organization_id"]
+        rating = request.POST["rating"]
+        review_text = request.POST["review_text"]
+        user = User.objects.get(username=request.user.username)
+        Reviews.objects.create(review_text=review_text,
+                            rating=rating,
+                            date=datetime.now(),
+                            user_id=user,
+                            organization_id=Organization.objects.get(pk=organization_id))
 
-    return redirect('/')
+        organization = Organization.objects.get(pk=organization_id)
+        return HttpResponseRedirect( organization.get_absolute_url() )
+    messages.add_message(request, messages.INFO, 'Login to write Reviews')
+    return redirect('/login')

@@ -25,6 +25,31 @@ class OrganizationTestCase(TestCase):
                                     website="www.enrich.edu",
                                     imageURL="a")
 
+        self.org1 = Organization.objects.create(organization_id=2,
+                                                name="ace",
+                                                description="after school",
+                                                free=False,
+                                                tuition=1000,
+                                                rating=2,
+                                                category="a",
+                                                address="55 main street",
+                                                contact_number="1111",
+                                                website="www.ace.edu",
+                                                imageURL="a")
+
+    def test_attributes_of_organization_model(self):
+        self.assertEquals(self.org1.organization_id, 2)
+        self.assertEquals(self.org1.name, "ace")
+        self.assertEquals(self.org1.description, "after school")
+        self.assertEquals(self.org1.free, False)
+        self.assertEquals(self.org1.tuition, 1000)
+        self.assertEquals(self.org1.rating, 2)
+        self.assertEquals(self.org1.category, "a")
+        self.assertEquals(self.org1.address, "55 main street")
+        self.assertEquals(self.org1.contact_number, "1111")
+        self.assertEquals(self.org1.website, "www.ace.edu")
+        self.assertEquals(self.org1.imageURL, "a")
+
     def test_entering_the_db(self):
         """Tests if I entered into the database"""
         entry = Organization.objects.get(organization_id=1)

@@ -13,21 +13,28 @@
 
                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                <!-- CHANGE ACTION AND METHOD FOR LOGIN -->
-               <form id="loginform" class="form-horizontal" role="form" action="login_user/" method="post">
+               {% if messages %}
+               <div class="messages">
+                   {% for message in messages %}
+                   <h3 style="color:#C7254E;"{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h3>
+                   {% endfor %}
+               </div>
+               {% endif %}
+               <form id="loginform" class="form-horizontal" role="form" action="{% url 'login_user' %}" method="post">
 
                    {% csrf_token %}
                    <div style="margin-bottom: 25px" class="input-group">
                        <!-- INPUTS FOR LOGIN BEGIN HERE -->
 
-                       <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                       <input id="login-email" type="text" class="form-control" name="username" value="" placeholder="username" required>
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                       <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Username" required>
 
                    </div>
 
                    <div style="margin-bottom: 25px" class="input-group">
 
                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                       <input id="login-password" type="password" class="form-control" name="password" placeholder="password" required>
+                       <input id="login-password" type="password" class="form-control" name="password" placeholder="Password" required>
 
                        <!-- INPUTS FOR LOGIN END HERE -->
                    </div>
@@ -37,10 +44,9 @@
                        <!-- Button -->
 
                        <div class="col-sm-12 controls">
-                         <button id="btn-login" href="window.location.href='/" class="btn btn-success" type="submit">Login  </button>
+                         <button id="btn-login" class="btn btn-success" type="submit">Login  </button>
                        </div>
                    </div>
-
 
                    <div class="form-group">
                        <div class="col-md-12 control">
@@ -65,7 +71,7 @@
            <div class="panel-body" >
 
                <!-- CHANGE ACTION AND METHOD FOR SIGNUP -->
-               <form id="signupform" class="form-horizontal" role="form"  action="register/" method="post">
+               <form id="signupform" class="form-horizontal" role="form"  action="{% url 'register' %}" method="post">
                    <div id="signupalert" style="display:none" class="alert alert-danger">
                        <p>Error:</p>
                        <span></span>
@@ -82,17 +88,17 @@
 
                    <div style="margin-bottom: 25px" class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                       <input id="Firstname" type="text" class="form-control" name="first_name" value="" placeholder="First Name" required>
+                       <input id="firstname" type="text" class="form-control" name="first_name" value="" placeholder="First Name" required>
                    </div>
 
                    <div style="margin-bottom: 25px" class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                       <input id="Lastname" type="text" class="form-control" name="last_name" value="" placeholder="Last Name" required>
+                       <input id="lastname" type="text" class="form-control" name="last_name" value="" placeholder="Last Name" required>
                    </div>
 
                    <div style="margin-bottom: 25px" class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                       <input id="name" type="text" class="form-control" name="username" value="" placeholder="Userame" required>
+                       <input id="username" type="text" class="form-control" name="username" value="" placeholder="Username" required>
                    </div>
 
                    <div style="margin-bottom: 25px" class="input-group">
