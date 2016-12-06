@@ -3,6 +3,8 @@ from datetime import datetime
 from django.shortcuts import render, redirect
 import googlemaps
 from Enrich.models import Reviews
+from django.http import HttpResponseRedirect
+from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Organization
 
@@ -39,14 +41,17 @@ def organization_page(request, name):
 def submit_form(request):
     """Handles our review submitting form."""
     #user_id = request.POST["user_id"]
-    organization_id = request.POST["organization_id"]
-    rating = request.POST["rating"]
-    review_text = request.POST["review_text"]
-    user = User.objects.get(username=request.user.username)
-    Reviews.objects.create(review_text=review_text,
-                           rating=rating,
-                           date=datetime.now(),
-                           user_id=user,
-                           organization_id=Organization.objects.get(pk=organization_id))
+    if request.user.username:
+        organization_id = request.POST["organization_id"]
+        rating = request.POST["rating"]
+        review_text = request.POST["review_text"]
+        user = User.objects.get(username=request.user.username)
+        Reviews.objects.create(review_text=review_text,
+                            rating=rating,
+                            date=datetime.now(),
+                            user_id=user,
+                            organization_id=Organization.objects.get(pk=organization_id))
 
-    return redirect('/')
+        return redirect('/')
+    messages.add_message(request, messages.INFO, 'Create an account to write Reviews')
+    return redirect('/login')
