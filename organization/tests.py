@@ -100,7 +100,6 @@ class OrganizationTestCase(TestCase):
 
         #looking for some known features of our org pages
         self.assertTrue("blah" in str(response.content))
-        self.assertTrue("Location" in str(response.content))
         self.assertTrue("Reviews" in str(response.content))
 
     def test_a_submission(self):
