@@ -52,6 +52,7 @@ def submit_form(request):
                             user_id=user,
                             organization_id=Organization.objects.get(pk=organization_id))
 
-        return redirect('/')
+        organization = Organization.objects.get(pk=organization_id)
+        return HttpResponseRedirect( organization.get_absolute_url() )
     messages.add_message(request, messages.INFO, 'Login to write Reviews')
     return redirect('/login')
