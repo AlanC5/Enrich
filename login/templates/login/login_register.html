@@ -13,6 +13,13 @@
 
                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                <!-- CHANGE ACTION AND METHOD FOR LOGIN -->
+               {% if messages %}
+               <div class="messages">
+                   {% for message in messages %}
+                   <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                   {% endfor %}
+               </div>
+               {% endif %}
                <form id="loginform" class="form-horizontal" role="form" action="{% url 'login_user' %}" method="post">
 
                    {% csrf_token %}
@@ -40,7 +47,6 @@
                          <button id="btn-login" class="btn btn-success" type="submit">Login  </button>
                        </div>
                    </div>
-
 
                    <div class="form-group">
                        <div class="col-md-12 control">
