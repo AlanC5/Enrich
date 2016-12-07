@@ -33,7 +33,6 @@ def search_result(request):
 
             #process data and render search results
             query = form.cleaned_data['search_term']
-            print (query)
             # Create complex query with Q objects from category choices that the user selected
             # Utilize complex lookups with Q objects
             # https://docs.djangoproject.com/en/dev/topics/db/queries/#complex-lookups-with-q-objects
