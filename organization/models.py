@@ -1,13 +1,10 @@
-'''
-Models for oganizations
-'''
+'''Models for oganizations'''
 
 from __future__ import unicode_literals
 from django.db import models
 
 class Organization(models.Model):
     """Our organization model"""
-
     organization_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=100)
     description = models.TextField()
@@ -22,9 +19,11 @@ class Organization(models.Model):
 
 
     def __str__(self):
+        """Returns a string version of the model"""
         return str(self.organization_id) + ', ' + self.name + ', ' + self.description + ', ' +\
         str(self.free) + ', ' + self.tuition + ', ' + str(self.rating) + ', ' +\
         self.category + ', ' + self.address
 
     def get_absolute_url(self):
+        """Returns the absolute URL of the organization"""
         return "/organization/%s/" % self.name
