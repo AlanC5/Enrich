@@ -25,7 +25,7 @@ python manage.py runserver
 ## Deployment on Heroku:
 https://ancient-lowlands-74290.herokuapp.com/
 
-## Suggested browser:
+## Suggested Browser:
 Google Chrome
 
 ## Testing and Coverage:
