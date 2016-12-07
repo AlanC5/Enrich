@@ -24,17 +24,15 @@ def search_result(request):
     '''
     # Check if POST request
     if request.method == 'POST':
+
         form = SearchForm(request.POST)
-
         if form.is_valid():
-
             # get the categoryChoices the user selected
             categoryChoices = form.cleaned_data.get('category')
             priceChoice = form.cleaned_data.get('price')
 
             #process data and render search results
             query = form.cleaned_data['search_term']
-
             # Create complex query with Q objects from category choices that the user selected
             # Utilize complex lookups with Q objects
             # https://docs.djangoproject.com/en/dev/topics/db/queries/#complex-lookups-with-q-objects
@@ -61,6 +59,12 @@ def search_result(request):
                 result.negativeStarRange = range(5 - int(rating))
 
             return render(request, 'search/search_results.html', {'search_term': query, 'results':results})
-    # else render the form
+        else:
+            results = Organization.objects.all()
+            for each in results:
+                rating = each.rating
+                each.starRange = range(int(rating))
+                each.negativeStarRange = range(5 - int(rating))
+            return render(request, 'search/search_results.html', {'search_term': ' ', 'results':results})
     else:
         return HttpResponseRedirect('/search/')
