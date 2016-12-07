@@ -8,7 +8,7 @@
             <form action="/search/search_result/" method="post">
                 {% csrf_token %}
                 <div class="row">
-                    <input class="form-control pull-left input-lg" id="id_search_term" maxlength="100" name="search_term" type="text" required pattern=".*\S+.*" placeholder="Search" style="display:inline-block; width: calc(100% - 100px);">
+                    <input class="form-control pull-left input-lg" id="id_search_term" maxlength="100" name="search_term" type="text" required pattern=".*\S+.*" placeholder="Eg. Brooklyn, math, college, piano" style="display:inline-block; width: calc(100% - 100px);">
                     <button type="submit" class="btn btn-success btn-lg pull-right" id="filter_submit">Search</button>
                 </div>
 
