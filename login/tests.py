@@ -39,11 +39,3 @@ class LoginTestCase(TestCase):
         self.c.get("/login/logout_user/")
         user = auth.get_user(self.c)
         self.assertFalse(user.is_authenticated())
-
-
-    def test_registration_form(self):
-        """Tests registration functionality"""
-        request = self.c.post("/login/register", {"username": "Sam123", "first_name": "Sam",
-            "last_name": "Cohen", "email": "samcohen@gmail.com", "password": "test"})
-        #make sure a message was written
-        self.assertTrue(True)

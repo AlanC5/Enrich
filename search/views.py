@@ -8,10 +8,10 @@ from user.models import EnrichUser
 from .forms import SearchForm, FilterSearchForm
 
 def index(request):
-    """Search Form and Get Response"""    
+    """Search Form and Get Response"""
     form = SearchForm()
     filterform = FilterSearchForm()
-    user = request.user
+    #user = request.user
     return render(request, 'search/search.html', {'form' : form, 'filterForm' : filterform})
 
 def search_result(request):
