@@ -1,3 +1,4 @@
+"""Login views"""
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
@@ -8,15 +9,13 @@ from django.forms.models import inlineformset_factory
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
 from .forms import RegistrationForm
-
-# Create your views here.
-
 def logout_user(request):
+    """Logout a user"""
     logout(request)
     return render(request, 'search/search.html')
 
-
 def login_user(request):
+    """Login a user"""
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
@@ -30,8 +29,8 @@ def login_user(request):
             return render(request, 'login/login_register.html', {'error_message': 'Invalid login'})
     return render(request, 'login/login_register.html')
 
-
 def register(request):
+    """Register a user"""
     form = RegistrationForm(request.POST or None)
     if form.is_valid():
         user = User.objects.create_user(

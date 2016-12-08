@@ -8,7 +8,6 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Organization
 
-
 GMAPS = googlemaps.Client(key='AIzaSyDaRcVBVfVT8bTlZ5DUCir9qlT_EVYyWIM')
 
 def index(request):
@@ -24,14 +23,12 @@ def organization_page(request, name):
 
     geocode_result = GMAPS.geocode(address)
     latlong = (geocode_result[0].get('geometry')).get('location')
-    #print(latlong)
     reviews = Reviews.objects.filter(organization_id=organization[0]).order_by('-date')
     print(latlong)
     for review in reviews:
         rating = review.rating
         review.starRange = range(int(rating))
         review.negativeStarRange = range(5 - int(rating))
-
     lat = latlong['lat']
     lon = latlong['lng']
     return render(request, 'organization/organization.html',
