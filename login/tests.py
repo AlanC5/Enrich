@@ -2,11 +2,14 @@
 
 from django.test import TestCase, Client
 from django.test.client import RequestFactory
+from django.contrib.auth.models import User
+from django.contrib import auth
 from .views import register
 
 class LoginTestCase(TestCase):
     """Login tests"""
     def setUp(self):
+        User.objects.create_user(username="Sam", password="Sam")
         self.c = Client()
         self.rf = RequestFactory()
 
@@ -25,16 +28,22 @@ class LoginTestCase(TestCase):
         response = self.c.get("/login/#")
         self.assertEqual(response.status_code, 200)
 
-    def test_login_redirect(self):
-        """Given a get instead of a POST, login_user redirects to login"""
-        response = self.c.get("/login/login_user/")
+    def test_login(self):
+        """Tests the login"""
+        self.c.login(username="Sam", password="Sam")
+        user = auth.get_user(self.c)
+        self.assertTrue(user.is_authenticated())
 
-        self.assertEqual(response.status_code, 302)
+    def test_logout(self):
+        """Tests logout functionality"""
+        self.c.get("/login/logout_user/")
+        user = auth.get_user(self.c)
+        self.assertFalse(user.is_authenticated())
+
 
     def test_registration_form(self):
         """Tests registration functionality"""
-        request = self.c.post("login/register", {"username": "a", "first_name": "Sam",
+        request = self.c.post("/login/register", {"username": "Sam123", "first_name": "Sam",
             "last_name": "Cohen", "email": "samcohen@gmail.com", "password": "test"})
 
-        request = self.c.get("login/register")
         self.assertTrue("True")
