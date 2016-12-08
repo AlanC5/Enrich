@@ -25,6 +25,18 @@ class SearchTestCase(TestCase):
                                     website="www.enrich.com",
                                     imageURL="IMAGE HERE")
 
+        Organization.objects.create(organization_id=2,
+                                    name="Test",
+                                    category="Art/Humanities",
+                                    description="d",
+                                    free=True,
+                                    tuition=0,
+                                    rating=5,
+                                    address="124 Elm Ave",
+                                    contact_number="555-555-5555",
+                                    website="www.enrich.com",
+                                    imageURL="IMAGE HERE")
+
     def test_search_page_exists(self):
         """Makes sure the search page index returns a 200 OK"""
 
@@ -50,13 +62,13 @@ class SearchTestCase(TestCase):
 
     def test_filter_arguments(self):
         """Tests that our filtering functions work"""
-        response = self.c.post("/search/search_result/", {"search_term": "d", "price": "6000"})
+        response = self.c.post("/search/search_result/", {"search_term": "d", "category": "STEM"})
         self.assertTrue("<li>" in str(response.content))
         self.assertEqual(response.status_code, 200)
-        response = self.c.post("/search/search_result/", {"search_term": "d", "category": "STEM", "price": "6000"})
+        response = self.c.post("/search/search_result/", {"search_term": "d", "category":"STEM", "price": "TUITION"})
         self.assertTrue("<li>" in str(response.content))
         self.assertEqual(response.status_code, 200)
-        response = self.c.post("/search/search_result/", {"search_term": " ", "category": "STEM", "price": "6000"})
+        response = self.c.post("/search/search_result/", {"search_term": " ", "category": "STEM", "price": "TUITION"})
         self.assertTrue("<li>" in str(response.content))
         self.assertEqual(response.status_code, 200)
 
