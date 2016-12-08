@@ -30,6 +30,8 @@ Google Chrome
 
 ## Testing and Coverage:
 python manage.py test
+
+
 coverage report
 
 ## Pylint:
