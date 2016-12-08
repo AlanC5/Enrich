@@ -49,12 +49,27 @@ class SearchTestCase(TestCase):
 
         self.assertEqual(response.status_code, 200)
 
+    def test_filter_arguments(self):
+        request = self.rf.post("/search/search_result/", {"search_term": "b", "category": "c"})
+        response = search_result(request)
+
+        request = self.rf.post("/search/search_result/", {"search_term": "b", "category": "c", "price": 0})
+        response = search_result(request)
+
+        request = self.rf.post("/search/search_result/", {"search_term": " ", "category": "c", "price": 0})
+        response = search_result(request)
+
+        self.assertEqual(response.status_code, 200)
 
     def test_results_page_works(self):
         """Tests that a results page works for a given input"""
 
         post_request = self.rf.post("/search/search_result/", {"search_term": "a"})
         response = search_result(post_request)
+
+        post_request = self.rf.post("/search/search_result/", {"search_term": ""})
+        response = search_result(post_request)
+
 
         #We're looking for the right list element.
         #Our format is <li>
