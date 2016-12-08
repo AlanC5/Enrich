@@ -30,6 +30,7 @@ Google Chrome
 
 ## Testing and Coverage:
 python manage.py test
+coverage report
 
 ## Pylint:
 Please run the following line below on all of our apps.
