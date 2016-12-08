@@ -8,9 +8,7 @@ class UserTestCase(TestCase):
     def setUp(self):
         """Sets up test db"""
         self.c = Client()
-        User.objects.create(user="name")
 
-#         self.user1 = Organization.objects.create(user="tony")
-#
-#     def test_attributes_of_user_model(self):
-#         self.assertEquals(self.user1.user, "tony")
+
+    def test_create_Enrich_user(self):
+        EnrichUser.objects.create(user = "Test")
