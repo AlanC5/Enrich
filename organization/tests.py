@@ -38,17 +38,18 @@ class OrganizationTestCase(TestCase):
                                                 imageURL="a")
 
     def test_attributes_of_organization_model(self):
-        self.assertEquals(self.org1.organization_id, 2)
-        self.assertEquals(self.org1.name, "ace")
-        self.assertEquals(self.org1.description, "after school")
-        self.assertEquals(self.org1.free, False)
-        self.assertEquals(self.org1.tuition, 1000)
-        self.assertEquals(self.org1.rating, 2)
-        self.assertEquals(self.org1.category, "a")
-        self.assertEquals(self.org1.address, "55 main street")
-        self.assertEquals(self.org1.contact_number, "1111")
-        self.assertEquals(self.org1.website, "www.ace.edu")
-        self.assertEquals(self.org1.imageURL, "a")
+        """Makes sure we can create our organization model"""
+        self.assertEqual(self.org1.organization_id, 2)
+        self.assertEqual(self.org1.name, "ace")
+        self.assertEqual(self.org1.description, "after school")
+        self.assertEqual(self.org1.free, False)
+        self.assertEqual(self.org1.tuition, 1000)
+        self.assertEqual(self.org1.rating, 2)
+        self.assertEqual(self.org1.category, "a")
+        self.assertEqual(self.org1.address, "55 main street")
+        self.assertEqual(self.org1.contact_number, "1111")
+        self.assertEqual(self.org1.website, "www.ace.edu")
+        self.assertEqual(self.org1.imageURL, "a")
 
     def test_entering_the_db(self):
         """Tests if I entered into the database"""
@@ -129,3 +130,11 @@ class OrganizationTestCase(TestCase):
         self.assertTrue(reviewList.exists())
         req = self.rf.get("/organization/a/")
         response = organization_page(req, "a")
+
+    def test_submit_redirect(self):
+        """Makes sure the review form does not let you write a review not logged in"""
+        response = self.c.post("/organization/submit_form", {'organization_id': 1, "rating": 5,\
+                                "review_text": 5}, follow=True)
+        m = list(response.context['messages'])
+
+        self.assertEqual(len(m), 1)

@@ -8,7 +8,3 @@ class UserTestCase(TestCase):
     def setUp(self):
         """Sets up test db"""
         self.c = Client()
-
-
-    def test_create_Enrich_user(self):
-        EnrichUser.objects.create(user = "Test")

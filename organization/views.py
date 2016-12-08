@@ -1,11 +1,13 @@
 """Organization views"""
 from datetime import datetime
 from django.shortcuts import render, redirect
-import googlemaps
-from Enrich.models import Reviews
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.models import User
+
+import googlemaps
+from Enrich.models import Reviews
+
 from .models import Organization
 
 GMAPS = googlemaps.Client(key='AIzaSyDaRcVBVfVT8bTlZ5DUCir9qlT_EVYyWIM')
@@ -44,12 +46,13 @@ def submit_form(request):
         review_text = request.POST["review_text"]
         user = User.objects.get(username=request.user.username)
         Reviews.objects.create(review_text=review_text,
-                            rating=rating,
-                            date=datetime.now(),
-                            user_id=user,
-                            organization_id=Organization.objects.get(pk=organization_id))
+                               rating=rating,
+                               date=datetime.now(),
+                               user_id=user,
+                               organization_id=Organization.objects.get(pk=organization_id))
 
         organization = Organization.objects.get(pk=organization_id)
-        return HttpResponseRedirect( organization.get_absolute_url() )
+        return HttpResponseRedirect(organization.get_absolute_url())
+
     messages.add_message(request, messages.INFO, 'Login to write Reviews')
     return redirect('/login')

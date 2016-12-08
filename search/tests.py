@@ -15,7 +15,7 @@ class SearchTestCase(TestCase):
         self.rf = RequestFactory()
         Organization.objects.create(organization_id=1,
                                     name="b",
-                                    category="c",
+                                    category="STEM",
                                     description="d",
                                     free=False,
                                     tuition=6000,
@@ -24,7 +24,6 @@ class SearchTestCase(TestCase):
                                     contact_number="555-555-5555",
                                     website="www.enrich.com",
                                     imageURL="IMAGE HERE")
-
 
     def test_search_page_exists(self):
         """Makes sure the search page index returns a 200 OK"""
@@ -50,15 +49,15 @@ class SearchTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_filter_arguments(self):
-        request = self.rf.post("/search/search_result/", {"search_term": "b", "category": "c"})
-        response = search_result(request)
-
-        request = self.rf.post("/search/search_result/", {"search_term": "b", "category": "c", "price": 0})
-        response = search_result(request)
-
-        request = self.rf.post("/search/search_result/", {"search_term": " ", "category": "c", "price": 0})
-        response = search_result(request)
-
+        """Tests that our filtering functions work"""
+        response = self.c.post("/search/search_result/", {"search_term": "d", "price": "6000"})
+        self.assertTrue("<li>" in str(response.content))
+        self.assertEqual(response.status_code, 200)
+        response = self.c.post("/search/search_result/", {"search_term": "d", "category": "STEM", "price": "6000"})
+        self.assertTrue("<li>" in str(response.content))
+        self.assertEqual(response.status_code, 200)
+        response = self.c.post("/search/search_result/", {"search_term": " ", "category": "STEM", "price": "6000"})
+        self.assertTrue("<li>" in str(response.content))
         self.assertEqual(response.status_code, 200)
 
     def test_results_page_works(self):
