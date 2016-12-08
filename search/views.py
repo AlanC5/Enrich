@@ -1,6 +1,5 @@
-'''
-Rendering the appropriate views
-'''
+"""Rendering the appropriate views"""
+
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.db.models import Q
@@ -9,28 +8,21 @@ from user.models import EnrichUser
 from .forms import SearchForm, FilterSearchForm
 
 def index(request):
-    '''
-    Search Form and Get Responses
-    '''
+    """Search Form and Get Response"""    
     form = SearchForm()
     filterform = FilterSearchForm()
     user = request.user
     return render(request, 'search/search.html', {'form' : form, 'filterForm' : filterform})
 
-
 def search_result(request):
-    '''
-    Display search results
-    '''
+    """Display search results"""
     # Check if POST request
     if request.method == 'POST':
-
         form = SearchForm(request.POST)
         if form.is_valid():
             # get the categoryChoices the user selected
             categoryChoices = form.cleaned_data.get('category')
             priceChoice = form.cleaned_data.get('price')
-
             #process data and render search results
             query = form.cleaned_data['search_term']
             # Create complex query with Q objects from category choices that the user selected
@@ -57,7 +49,6 @@ def search_result(request):
                 rating = result.rating
                 result.starRange = range(int(rating))
                 result.negativeStarRange = range(5 - int(rating))
-
             return render(request, 'search/search_results.html', {'search_term': query, 'results':results})
         else:
             results = Organization.objects.all()
