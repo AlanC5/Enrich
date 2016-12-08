@@ -25,6 +25,12 @@ class LoginTestCase(TestCase):
         response = self.c.get("/login/#")
         self.assertEqual(response.status_code, 200)
 
+    def test_login_redirect(self):
+        """Given a get instead of a POST, login_user redirects to login"""
+        response = self.c.get("/login/login_user/")
+
+        self.assertEqual(response.status_code, 302)
+
     def test_registration_form(self):
         """Tests registration functionality"""
         request = self.c.post("login/register", {"username": "a", "first_name": "Sam",

@@ -7,7 +7,6 @@ from django.db import models
 
 class Organization(models.Model):
     """Our organization model"""
-
     organization_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=100)
     description = models.TextField()

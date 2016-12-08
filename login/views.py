@@ -9,8 +9,10 @@ from django.forms.models import inlineformset_factory
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
 from .forms import RegistrationForm
+
 def logout_user(request):
     """Logout a user"""
+    
     logout(request)
     return render(request, 'search/search.html')
 
@@ -24,9 +26,12 @@ def login_user(request):
             if user.is_active:
                 login(request, user)
                 curr_user = EnrichUser.objects.filter(user=request.user)
+
                 return redirect('/')
+        
         else:
             return render(request, 'login/login_register.html', {'error_message': 'Invalid login'})
+
     return render(request, 'login/login_register.html')
 
 def register(request):
@@ -43,8 +48,11 @@ def register(request):
         if user is not None:
             login(request, user)
             return redirect('/')
+            
         return redirect('/')
+
     context = {
         "form": form,
     }
+
     return render(request, 'login/login_register.html', context)

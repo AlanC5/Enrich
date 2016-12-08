@@ -117,8 +117,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 TEST_RUNNER = "django_nose.NoseTestSuiteRunner"
 NOSE_ARGS = [
+    '--verbosity=2',
     '--with-coverage',
-    '--cover-package= Enrich,user,organization, search, login'
+    '--cover-package= Enrich,user,organization, search, login',
+    '--cover-html-dir="~/coverage.html"',
     ]
 
 # Internationalization
