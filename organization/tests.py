@@ -129,3 +129,11 @@ class OrganizationTestCase(TestCase):
         self.assertTrue(reviewList.exists())
         req = self.rf.get("/organization/a/")
         response = organization_page(req, "a")
+
+    def test_submit_redirect(self):
+        response = self.c.post("/organization/submit_form", {'organization_id': 1, "rating": 5,\
+                                "review_text": 5}, follow=True)
+
+        m = list(response.context['messages'])
+
+        self.assertEqual(len(m), 1)

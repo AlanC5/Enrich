@@ -37,6 +37,7 @@ def login_user(request):
 def register(request):
     """Register a user"""
     form = RegistrationForm(request.POST or None)
+    
     if form.is_valid():
         user = User.objects.create_user(
         username=form.cleaned_data['username'],

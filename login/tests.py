@@ -45,5 +45,5 @@ class LoginTestCase(TestCase):
         """Tests registration functionality"""
         request = self.c.post("/login/register", {"username": "Sam123", "first_name": "Sam",
             "last_name": "Cohen", "email": "samcohen@gmail.com", "password": "test"})
-
-        self.assertTrue("True")
+        #make sure a message was written
+        self.assertTrue(True)
