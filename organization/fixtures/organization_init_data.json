@@ -463,6 +463,21 @@
               "website": "https://www.asphaltgreen.org/",
               "imageURL": "https://media.timeout.com/images/102719716/750/422/image.jpg"
             }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 30,
+            "fields": {
+              "name": "Yogi Beans Classes",
+              "description": "Kids aged 3–10 can get flexible with class offerings at three different locations (and one in Central Park!) that employs age-appropriate techniques, games and props to teach young yogis the benefits of a regular practice.",
+              "free": false,
+              "tuition": "Unknown",
+              "rating": 4.0,
+              "category": "Sports",
+              "address": "1018 Lexington Ave, New York, NY 10021",
+              "contact_number": "(212) 585-2326",
+              "website": "https://www.yogibeans.com/",
+              "imageURL": "https://media.timeout.com/images/102742625/350/263/image.jpg"
+            }
         }
-
 ]
