@@ -415,5 +415,21 @@
               "website": "http://brooklynboulders.com/brooklyn/youth/",
               "imageURL": "https://media.timeout.com/images/102719619/750/422/image.jpg"
             }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 27,
+            "fields": {
+              "name": "LIC Kids",
+              "description": "Tots who love to tumble can improve their balance and coordination in this Long Island City training center’s after-school program.",
+              "free": false,
+              "tuition": "Unknown",
+              "rating": 4.0,
+              "category": "Sports",
+              "address": "5-02 50th Ave, Long Island City, NY 11101",
+              "contact_number": "(718) 392-5437",
+              "website": "http://www.lickids.com/",
+              "imageURL": "https://media.timeout.com/images/102735529/750/422/image.jpg"
+            }
         }
 ]
