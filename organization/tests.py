@@ -1,7 +1,7 @@
 """Tests the organization app"""
 from django.test import TestCase, Client, RequestFactory
-from Enrich.models import Reviews
 from django.contrib.auth.models import User
+from Enrich.models import Reviews
 from .models import Organization
 from .views import organization_page, submit_form, index
 
@@ -38,17 +38,18 @@ class OrganizationTestCase(TestCase):
                                                 imageURL="a")
 
     def test_attributes_of_organization_model(self):
-        self.assertEquals(self.org1.organization_id, 2)
-        self.assertEquals(self.org1.name, "ace")
-        self.assertEquals(self.org1.description, "after school")
-        self.assertEquals(self.org1.free, False)
-        self.assertEquals(self.org1.tuition, 1000)
-        self.assertEquals(self.org1.rating, 2)
-        self.assertEquals(self.org1.category, "a")
-        self.assertEquals(self.org1.address, "55 main street")
-        self.assertEquals(self.org1.contact_number, "1111")
-        self.assertEquals(self.org1.website, "www.ace.edu")
-        self.assertEquals(self.org1.imageURL, "a")
+        """Makes sure we can create our organization model"""
+        self.assertEqual(self.org1.organization_id, 2)
+        self.assertEqual(self.org1.name, "ace")
+        self.assertEqual(self.org1.description, "after school")
+        self.assertEqual(self.org1.free, False)
+        self.assertEqual(self.org1.tuition, 1000)
+        self.assertEqual(self.org1.rating, 2)
+        self.assertEqual(self.org1.category, "a")
+        self.assertEqual(self.org1.address, "55 main street")
+        self.assertEqual(self.org1.contact_number, "1111")
+        self.assertEqual(self.org1.website, "www.ace.edu")
+        self.assertEqual(self.org1.imageURL, "a")
 
     def test_entering_the_db(self):
         """Tests if I entered into the database"""
@@ -60,7 +61,8 @@ class OrganizationTestCase(TestCase):
     def test_removing_from_db(self):
         """Tests if I can add and remove to/from db"""
 
-        Organization.objects.create(name="b",
+        Organization.objects.create(organization_id="10",
+                                    name="b",
                                     category="a",
                                     description="blah",
                                     free=False,
@@ -71,12 +73,12 @@ class OrganizationTestCase(TestCase):
                                     website="www.enrich.edu",
                                     imageURL="a")
 
-        entry = Organization.objects.get(organization_id=2)
+        entry = Organization.objects.get(organization_id=10)
         self.assertTrue(entry)
-
+        self.assertEqual(entry.get_absolute_url(), "/organization/b/")
         entry.delete()
         entry = Organization.objects.all()
-        self.assertTrue(len(entry) == 1)
+        self.assertEqual(len(entry), 2)
     def test_index(self):
         """tests the index"""
         req = self.rf.get("/")
@@ -92,7 +94,7 @@ class OrganizationTestCase(TestCase):
         response = self.c.get("/submit_form")
         self.assertTrue(response.status_code, 302)
 
-    def test_organization_page(self):
+    def test_organization_page_functions(self):
         """Tests the organization page"""
         req = self.rf.get("/organization/a")
         name = "a"
@@ -101,8 +103,10 @@ class OrganizationTestCase(TestCase):
 
         #looking for some known features of our org pages
         self.assertTrue("blah" in str(response.content))
-        self.assertTrue("Location" in str(response.content))
         self.assertTrue("Reviews" in str(response.content))
+    def test_absolute_url(self):
+        """Verifies that the absolute URL function works"""
+        self.assertEqual("/organization/%s/" % self.org1.name, self.org1.get_absolute_url())
 
     def test_a_submission(self):
         """Submits a review"""
@@ -116,7 +120,7 @@ class OrganizationTestCase(TestCase):
         self.assertTrue(User.objects.all().exists())
 
         testy = User.objects.get(username="test")
-        self.assertEqual(testy.username,"test")
+        self.assertEqual(testy.username, "test")
         self.assertEqual(testy.pk, 1)
         self.c.post("/login/login_user/", {"username": "test", "password": "test"})
         response = self.c.post("/organization/submit_form/", {'organization_id': 1, "rating": 5,\
@@ -126,3 +130,11 @@ class OrganizationTestCase(TestCase):
         self.assertTrue(reviewList.exists())
         req = self.rf.get("/organization/a/")
         response = organization_page(req, "a")
+
+    def test_submit_redirect(self):
+        """Makes sure the review form does not let you write a review not logged in"""
+        response = self.c.post("/organization/submit_form", {'organization_id': 1, "rating": 5,\
+                                "review_text": 5}, follow=True)
+        m = list(response.context['messages'])
+
+        self.assertEqual(len(m), 1)

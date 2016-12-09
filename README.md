@@ -23,12 +23,18 @@ pip install -r requirements.txt
 python manage.py runserver
 
 ## Deployment on Heroku:
-https://ancient-lowlands-74290.herokuapp.com/
+https://limitless-shore-59909.herokuapp.com/
+
+## Suggested Browser:
+Google Chrome
 
 ## Testing and Coverage:
 python manage.py test
 
+
+coverage report
+
 ## Pylint:
 Please run the following line below on all of our apps.
 
-pylint --load-plugins=pylint_django ./* --rcfile .pylintrc
+pylint --load-plugins=pylint_django Enrich search user login organization  

@@ -1,7 +1,7 @@
 '''
 Tests for Search functionality
 '''
-from django.test import TestCase
+from django.test import TestCase, Client
 from django.test.client import RequestFactory
 from organization.models import Organization
 
@@ -11,10 +11,11 @@ from .views import index, search_result
 class SearchTestCase(TestCase):
     """A Search functionality test class"""
     def setUp(self):
+        self.c = Client()
         self.rf = RequestFactory()
         Organization.objects.create(organization_id=1,
                                     name="b",
-                                    category="c",
+                                    category="STEM",
                                     description="d",
                                     free=False,
                                     tuition=6000,
@@ -24,19 +25,24 @@ class SearchTestCase(TestCase):
                                     website="www.enrich.com",
                                     imageURL="IMAGE HERE")
 
+        Organization.objects.create(organization_id=2,
+                                    name="Test",
+                                    category="Art/Humanities",
+                                    description="d",
+                                    free=True,
+                                    tuition=0,
+                                    rating=5,
+                                    address="124 Elm Ave",
+                                    contact_number="555-555-5555",
+                                    website="www.enrich.com",
+                                    imageURL="IMAGE HERE")
 
     def test_search_page_exists(self):
         """Makes sure the search page index returns a 200 OK"""
 
-        get_request = self.rf.get("/search/")
-        response = index(get_request)
+        #get_request = self.rf.get("/search/")
+        response = self.c.get("/search/")
         self.assertEqual(response.status_code, 200)
-
-    def test_search_page_title(self):
-        """Tests that the search page has the correct title tag"""
-        get_request = self.rf.get("/search/")
-        response = index(get_request)
-        self.assertTrue("<title>Search</title>" in str(response.content))
 
 
     def test_search_results_page_exists(self):
@@ -54,6 +60,17 @@ class SearchTestCase(TestCase):
 
         self.assertEqual(response.status_code, 200)
 
+    def test_filter_arguments(self):
+        """Tests that our filtering functions work"""
+        response = self.c.post("/search/search_result/", {"search_term": "d", "category": "STEM"})
+        self.assertTrue("<li>" in str(response.content))
+        self.assertEqual(response.status_code, 200)
+        response = self.c.post("/search/search_result/", {"search_term": "d", "category":"STEM", "price": "TUITION"})
+        self.assertTrue("<li>" in str(response.content))
+        self.assertEqual(response.status_code, 200)
+        response = self.c.post("/search/search_result/", {"search_term": " ", "category": "STEM", "price": "TUITION"})
+        self.assertTrue("<li>" in str(response.content))
+        self.assertEqual(response.status_code, 200)
 
     def test_results_page_works(self):
         """Tests that a results page works for a given input"""
@@ -61,6 +78,10 @@ class SearchTestCase(TestCase):
         post_request = self.rf.post("/search/search_result/", {"search_term": "a"})
         response = search_result(post_request)
 
+        post_request = self.rf.post("/search/search_result/", {"search_term": ""})
+        response = search_result(post_request)
+
+
         #We're looking for the right list element.
         #Our format is <li>
-        self.assertTrue("<li id = \"organization_1\"" in str(response.content))
+        self.assertTrue("<li>" in str(response.content))

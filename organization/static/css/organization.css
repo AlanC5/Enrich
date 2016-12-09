@@ -2,6 +2,30 @@
     font-size: 22px;
 }
 
+#form_rating {
+    position: absolute;
+    top: 9;
+    left: 65px;
+    height: 0px;
+    width: 0px;
+    border:none;
+    outline: none;
+    z-index: -1;
+    cursor: pointer;
+}
+
+#form_rating::-webkit-inner-spin-button,
+#form_rating::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#form_rating:focus, #form_rating:required {
+    box-shadow: none;
+    border:none;
+    outline: none;
+}
+
 #review_star_selection span {
     cursor: pointer;
 }
