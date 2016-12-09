@@ -386,7 +386,7 @@
         },
         {
             "model": "organization.organization",
-            "pk": 24,
+            "pk": 25,
             "fields": {
               "name": "Chelsea Piers",
               "description": "Chelsea Piers is a state-of-the-art recreational facility located on the Hudson River. Bowling, golf, ice hockey and wall climbing are just some of the many activities available.",
@@ -396,8 +396,24 @@
               "category": "Sports",
               "address": "Eleventh Ave between 17th and 23rd Sts New York",
               "contact_number": "212-336-6666",
-              "website": "http://www.timeout.com/new-york-kids/sport-and-fitness/chelsea-piers",
+              "website": "https://www.chelseapiers.com/fh/youth/",
               "imageURL": "https://media.timeout.com/images/102718782/750/422/image.jpg"
+            }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 26,
+            "fields": {
+              "name": "Brooklyn Boulders Kids Academy",
+              "description": "In the Brooklyn Boulders Kids Academy, kids build strength, concentration and problem-solving skills while stretching, bouldering, roped climbing and slacklining.",
+              "free": false,
+              "tuition": "Single class $42.50",
+              "rating": 3.0,
+              "category": "Sports",
+              "address": "575 Degraw St, Brooklyn, NY 11217",
+              "contact_number": "347-834-9066",
+              "website": "http://brooklynboulders.com/brooklyn/youth/",
+              "imageURL": "https://media.timeout.com/images/102719619/750/422/image.jpg"
             }
         }
 ]
