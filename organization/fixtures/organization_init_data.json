@@ -367,5 +367,37 @@
               "website": "https://www.kingsbayy.org/after-school/chaverim",
               "imageURL": "https://www.kingsbayy.org/images/summer-camps/after_school_main_picture.JPG"
             }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 24,
+            "fields": {
+              "name": "92nd Street Y Classes",
+              "description": "The 92nd Street Y holds classes for every discipline under the sun, and the after-school offerings at their top-notch facilities are always family favorites.",
+              "free": false,
+              "tuition": "unknown",
+              "rating": 3.0,
+              "category": "Arts/Humanities",
+              "address": "1395 Lexington Ave, New York, NY 10128",
+              "contact_number": "(212) 415-5500",
+              "website": "https://www.92y.org/",
+              "imageURL": "https://media.timeout.com/images/102719390/350/263/image.jpg"
+            }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 24,
+            "fields": {
+              "name": "Chelsea Piers",
+              "description": "Chelsea Piers is a state-of-the-art recreational facility located on the Hudson River. Bowling, golf, ice hockey and wall climbing are just some of the many activities available.",
+              "free": false,
+              "tuition": "unknown",
+              "rating": 3.5,
+              "category": "Sports",
+              "address": "Eleventh Ave between 17th and 23rd Sts New York",
+              "contact_number": "212-336-6666",
+              "website": "http://www.timeout.com/new-york-kids/sport-and-fitness/chelsea-piers",
+              "imageURL": "https://media.timeout.com/images/102718782/750/422/image.jpg"
+            }
         }
 ]
