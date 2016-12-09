@@ -431,5 +431,21 @@
               "website": "http://www.lickids.com/",
               "imageURL": "https://media.timeout.com/images/102735529/750/422/image.jpg"
             }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 28,
+            "fields": {
+              "name": "Streb Lab for Action Mechanics (SLAM)",
+              "description": "With the concrete jungle as their playground, city kids are always moving at a fast pace. Choreographer Elizabeth Streb, founder of STREB Extreme Action Company, channels their endless energy in her KidAction classes, combining aspects of dance athletics, boxing, rodeo, the circus and Hollywood stunt work.",
+              "free": false,
+              "tuition": "Unknown",
+              "rating": 3.5,
+              "category": "Sports",
+              "address": "51 N 1st St, Brooklyn, NY 11211",
+              "contact_number": "(718) 384-6491",
+              "website": "http://streb.org/",
+              "imageURL": "https://media.timeout.com/images/102733940/750/422/image.jpg"
+            }
         }
 ]
