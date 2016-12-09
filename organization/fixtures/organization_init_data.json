@@ -351,5 +351,133 @@
               "website": "http://www.harlemrbi.org/",
               "imageURL": "http://www.bronx.com/thumbnail.php?file=Harlem_RBI_544281797.png&size=article_medium"
             }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 23,
+            "fields": {
+              "name": "Chaverim After School Program",
+              "description": "Chaverim is an after school program at the Kings Bay Y",
+              "free": false,
+              "tuition": "unknown",
+              "rating": 2.5,
+              "category": "Arts/Humanities",
+              "address": "3495 Nostrand Ave, Brooklyn, NY 11229",
+              "contact_number": "718-648-7703",
+              "website": "https://www.kingsbayy.org/after-school/chaverim",
+              "imageURL": "https://www.kingsbayy.org/images/summer-camps/after_school_main_picture.JPG"
+            }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 24,
+            "fields": {
+              "name": "92nd Street Y Classes",
+              "description": "The 92nd Street Y holds classes for every discipline under the sun, and the after-school offerings at their top-notch facilities are always family favorites.",
+              "free": false,
+              "tuition": "unknown",
+              "rating": 3.0,
+              "category": "Arts/Humanities",
+              "address": "1395 Lexington Ave, New York, NY 10128",
+              "contact_number": "(212) 415-5500",
+              "website": "https://www.92y.org/",
+              "imageURL": "https://media.timeout.com/images/102719390/350/263/image.jpg"
+            }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 25,
+            "fields": {
+              "name": "Chelsea Piers",
+              "description": "Chelsea Piers is a state-of-the-art recreational facility located on the Hudson River. Bowling, golf, ice hockey and wall climbing are just some of the many activities available.",
+              "free": false,
+              "tuition": "unknown",
+              "rating": 3.5,
+              "category": "Sports",
+              "address": "Eleventh Ave between 17th and 23rd Sts New York",
+              "contact_number": "212-336-6666",
+              "website": "https://www.chelseapiers.com/fh/youth/",
+              "imageURL": "https://media.timeout.com/images/102718782/750/422/image.jpg"
+            }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 26,
+            "fields": {
+              "name": "Brooklyn Boulders Kids Academy",
+              "description": "In the Brooklyn Boulders Kids Academy, kids build strength, concentration and problem-solving skills while stretching, bouldering, roped climbing and slacklining.",
+              "free": false,
+              "tuition": "Single class $42.50",
+              "rating": 3.0,
+              "category": "Sports",
+              "address": "575 Degraw St, Brooklyn, NY 11217",
+              "contact_number": "347-834-9066",
+              "website": "http://brooklynboulders.com/brooklyn/youth/",
+              "imageURL": "https://media.timeout.com/images/102719619/750/422/image.jpg"
+            }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 27,
+            "fields": {
+              "name": "LIC Kids",
+              "description": "Tots who love to tumble can improve their balance and coordination in this Long Island City training center’s after-school program.",
+              "free": false,
+              "tuition": "Unknown",
+              "rating": 4.0,
+              "category": "Sports",
+              "address": "5-02 50th Ave, Long Island City, NY 11101",
+              "contact_number": "(718) 392-5437",
+              "website": "http://www.lickids.com/",
+              "imageURL": "https://media.timeout.com/images/102735529/750/422/image.jpg"
+            }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 28,
+            "fields": {
+              "name": "Streb Lab for Action Mechanics (SLAM)",
+              "description": "With the concrete jungle as their playground, city kids are always moving at a fast pace. Choreographer Elizabeth Streb, founder of STREB Extreme Action Company, channels their endless energy in her KidAction classes, combining aspects of dance athletics, boxing, rodeo, the circus and Hollywood stunt work.",
+              "free": false,
+              "tuition": "Unknown",
+              "rating": 3.5,
+              "category": "Sports",
+              "address": "51 N 1st St, Brooklyn, NY 11211",
+              "contact_number": "(718) 384-6491",
+              "website": "http://streb.org/",
+              "imageURL": "https://media.timeout.com/images/102733940/750/422/image.jpg"
+            }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 29,
+            "fields": {
+              "name": "Asphalt Green Classes",
+              "description": "With an adjustable floor that switches from shallow to deep, Asphalt Green arguably has the best pool in Manhattan. The sports hub's comprehensive class offerings also include pilates, yoga, spinning and martial arts",
+              "free": false,
+              "tuition": "Unknown",
+              "rating": 4.5,
+              "category": "Sports",
+              "address": "212 North End Ave. New York, NY 10282",
+              "contact_number": "212.298.2900",
+              "website": "https://www.asphaltgreen.org/",
+              "imageURL": "https://media.timeout.com/images/102719716/750/422/image.jpg"
+            }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 30,
+            "fields": {
+              "name": "Yogi Beans Classes",
+              "description": "Kids aged 3–10 can get flexible with class offerings at three different locations (and one in Central Park!) that employs age-appropriate techniques, games and props to teach young yogis the benefits of a regular practice.",
+              "free": false,
+              "tuition": "Unknown",
+              "rating": 4.0,
+              "category": "Sports",
+              "address": "1018 Lexington Ave, New York, NY 10021",
+              "contact_number": "(212) 585-2326",
+              "website": "https://www.yogibeans.com/",
+              "imageURL": "https://media.timeout.com/images/102742625/350/263/image.jpg"
+            }
         }
 ]
