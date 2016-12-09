@@ -447,5 +447,22 @@
               "website": "http://streb.org/",
               "imageURL": "https://media.timeout.com/images/102733940/750/422/image.jpg"
             }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 29,
+            "fields": {
+              "name": "Asphalt Green Classes",
+              "description": "With an adjustable floor that switches from shallow to deep, Asphalt Green arguably has the best pool in Manhattan. The sports hub's comprehensive class offerings also include pilates, yoga, spinning and martial arts",
+              "free": false,
+              "tuition": "Unknown",
+              "rating": 4.5,
+              "category": "Sports",
+              "address": "212 North End Ave. New York, NY 10282",
+              "contact_number": "212.298.2900",
+              "website": "https://www.asphaltgreen.org/",
+              "imageURL": "https://media.timeout.com/images/102719716/750/422/image.jpg"
+            }
         }
+
 ]
