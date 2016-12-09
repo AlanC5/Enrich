@@ -351,5 +351,21 @@
               "website": "http://www.harlemrbi.org/",
               "imageURL": "http://www.bronx.com/thumbnail.php?file=Harlem_RBI_544281797.png&size=article_medium"
             }
+        },
+        {
+            "model": "organization.organization",
+            "pk": 23,
+            "fields": {
+              "name": "Chaverim After School Program",
+              "description": "Chaverim is an after school program at the Kings Bay Y",
+              "free": false,
+              "tuition": "unknown",
+              "rating": 2.5,
+              "category": "Arts/Humanities",
+              "address": "3495 Nostrand Ave, Brooklyn, NY 11229",
+              "contact_number": "718-648-7703",
+              "website": "https://www.kingsbayy.org/after-school/chaverim",
+              "imageURL": "https://www.kingsbayy.org/images/summer-camps/after_school_main_picture.JPG"
+            }
         }
 ]
