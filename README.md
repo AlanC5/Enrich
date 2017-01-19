@@ -16,7 +16,7 @@ Enrich is a tool for seamlessly finding enrichment programs. We understand that 
 ## Developer Guide 
 Do this before running tests, coverage, or pylint.
 
-git clone git@bitbucket.org:AlanCTW/enrich.git
+git clone https://github.com/AlanC5/Enrich.git
 
 pip install -r requirements.txt 
 
